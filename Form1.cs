@@ -5,6 +5,7 @@ namespace EuroExplorer
         public Form1()
         {
             InitializeComponent();
+
         }
 
         private void Title_Click(object sender, EventArgs e)
@@ -14,23 +15,18 @@ namespace EuroExplorer
 
         private void CountryA_Click(object sender, EventArgs e)
         {
+
             FormA newfrom = new FormA();
             newfrom.Show();
             this.WindowState = FormWindowState.Minimized;
+
         }
         private void CountryB_Click(object sender, EventArgs e)
         {
+
             FormB newfrom1 = new FormB();
             newfrom1.Show();
             this.WindowState = FormWindowState.Minimized;
-        }
-        private void CountryC_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void CountryD_Click(object sender, EventArgs e)
-        {
-
         }
         private void CountryE_Click(object sender, EventArgs e)
         {
@@ -85,5 +81,18 @@ namespace EuroExplorer
 
         }
 
+        private void CountryC_Click_1(object sender, EventArgs e)
+        {
+            FormC newfrom2 = new FormC();
+            newfrom2.Show();
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void CountryD_Click_1(object sender, EventArgs e)
+        {
+            FormD newfrom3 = new FormD();
+            newfrom3.Show();
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }

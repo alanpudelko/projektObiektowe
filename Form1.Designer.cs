@@ -148,7 +148,7 @@
             CountryB.TabIndex = 3;
             CountryB.Text = "B :";
             CountryB.UseVisualStyleBackColor = false;
-            CountryB.Click += this.CountryB_Click;
+            CountryB.Click += CountryB_Click;
             // 
             // pictureBox2
             // 
@@ -180,6 +180,7 @@
             CountryC.TabIndex = 6;
             CountryC.Text = "C :";
             CountryC.UseVisualStyleBackColor = false;
+            CountryC.Click += CountryC_Click_1;
             // 
             // pictureBox4
             // 
@@ -221,6 +222,7 @@
             CountryD.TabIndex = 10;
             CountryD.Text = "D :";
             CountryD.UseVisualStyleBackColor = false;
+            CountryD.Click += CountryD_Click_1;
             // 
             // pictureBox7
             // 
