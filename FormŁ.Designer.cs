@@ -1,6 +1,6 @@
 ﻿namespace EuroExplorer
 {
-    partial class FormD
+    partial class FormŁ
     {
         /// <summary>
         /// Required designer variable.
@@ -28,45 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormD));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormŁ));
             label1 = new Label();
-            Dania = new Button();
+            Łotwa = new Button();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 48F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            label1.Location = new Point(748, 9);
+            label1.Location = new Point(741, 9);
             label1.Name = "label1";
             label1.Size = new Size(556, 86);
-            label1.TabIndex = 2;
+            label1.TabIndex = 3;
             label1.Text = "Wybierz Państwo";
             // 
-            // Dania
+            // Łotwa
             // 
-            Dania.BackColor = Color.FromArgb(255, 223, 192);
-            Dania.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            Dania.Image = (Image)resources.GetObject("Dania.Image");
-            Dania.Location = new Point(748, 385);
-            Dania.Name = "Dania";
-            Dania.Size = new Size(248, 240);
-            Dania.TabIndex = 3;
-            Dania.Text = "Dania";
-            Dania.UseVisualStyleBackColor = false;
-            Dania.Click += Dania_Click;
+            Łotwa.AutoSize = true;
+            Łotwa.BackColor = Color.FromArgb(255, 223, 192);
+            Łotwa.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            Łotwa.Image = (Image)resources.GetObject("Łotwa.Image");
+            Łotwa.Location = new Point(741, 393);
+            Łotwa.Name = "Łotwa";
+            Łotwa.Size = new Size(248, 240);
+            Łotwa.TabIndex = 4;
+            Łotwa.Text = "Łotwa";
+            Łotwa.UseVisualStyleBackColor = false;
+            Łotwa.Click += Łotwa_Click;
             // 
-            // FormD
+            // FormŁ
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
             ClientSize = new Size(1904, 1041);
-            Controls.Add(Dania);
+            Controls.Add(Łotwa);
             Controls.Add(label1);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "FormD";
-            Text = "FormD";
+            Name = "FormŁ";
+            Text = "FormŁ";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -74,6 +75,6 @@
         #endregion
 
         private Label label1;
-        private Button Dania;
+        private Button Łotwa;
     }
 }

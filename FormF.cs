@@ -10,24 +10,24 @@ using System.Windows.Forms;
 
 namespace EuroExplorer
 {
-    public partial class FormB : Form
+    public partial class FormF : Form
     {
-        public FormB()
+        public FormF()
         {
             InitializeComponent();
         }
 
-        private void Belgia_Click(object sender, EventArgs e)
+        private void Dania_Click(object sender, EventArgs e)
         {
-            Belgia newfrom2 = new Belgia();
-            newfrom2.Show();
+            Finlandia F7 = new Finlandia();
+            F7.Show();
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void Bułgaria_Click(object sender, EventArgs e)
+        private void Francja_Click(object sender, EventArgs e)
         {
-            Bułgaria newfrom0 = new Bułgaria();
-            newfrom0.Show();
+            Francja F8 = new Francja();
+            F8.Show();
             this.WindowState = FormWindowState.Minimized;
         }
     }

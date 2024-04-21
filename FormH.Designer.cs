@@ -1,6 +1,6 @@
 ﻿namespace EuroExplorer
 {
-    partial class FormD
+    partial class FormH
     {
         /// <summary>
         /// Required designer variable.
@@ -28,45 +28,60 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormD));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormH));
             label1 = new Label();
-            Dania = new Button();
+            Hiszpania = new Button();
+            Holandia = new Button();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 48F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            label1.Location = new Point(748, 9);
+            label1.Location = new Point(729, 9);
             label1.Name = "label1";
             label1.Size = new Size(556, 86);
-            label1.TabIndex = 2;
+            label1.TabIndex = 3;
             label1.Text = "Wybierz Państwo";
             // 
-            // Dania
+            // Hiszpania
             // 
-            Dania.BackColor = Color.FromArgb(255, 223, 192);
-            Dania.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            Dania.Image = (Image)resources.GetObject("Dania.Image");
-            Dania.Location = new Point(748, 385);
-            Dania.Name = "Dania";
-            Dania.Size = new Size(248, 240);
-            Dania.TabIndex = 3;
-            Dania.Text = "Dania";
-            Dania.UseVisualStyleBackColor = false;
-            Dania.Click += Dania_Click;
+            Hiszpania.BackColor = Color.FromArgb(255, 223, 192);
+            Hiszpania.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            Hiszpania.Image = (Image)resources.GetObject("Hiszpania.Image");
+            Hiszpania.Location = new Point(469, 396);
+            Hiszpania.Name = "Hiszpania";
+            Hiszpania.Size = new Size(248, 240);
+            Hiszpania.TabIndex = 4;
+            Hiszpania.Text = "Hiszpania";
+            Hiszpania.UseVisualStyleBackColor = false;
+            Hiszpania.Click += Hiszpania_Click;
             // 
-            // FormD
+            // Holandia
+            // 
+            Holandia.BackColor = Color.FromArgb(255, 223, 192);
+            Holandia.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            Holandia.Image = (Image)resources.GetObject("Holandia.Image");
+            Holandia.Location = new Point(1292, 396);
+            Holandia.Name = "Holandia";
+            Holandia.Size = new Size(248, 240);
+            Holandia.TabIndex = 5;
+            Holandia.Text = "Holandia";
+            Holandia.UseVisualStyleBackColor = false;
+            Holandia.Click += Holandia_Click;
+            // 
+            // FormH
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
             ClientSize = new Size(1904, 1041);
-            Controls.Add(Dania);
+            Controls.Add(Holandia);
+            Controls.Add(Hiszpania);
             Controls.Add(label1);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "FormD";
-            Text = "FormD";
+            Name = "FormH";
+            Text = "FormH";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -74,6 +89,7 @@
         #endregion
 
         private Label label1;
-        private Button Dania;
+        private Button Hiszpania;
+        private Button Holandia;
     }
 }

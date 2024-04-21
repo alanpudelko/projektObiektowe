@@ -62,12 +62,13 @@
             Bułgaria.BackColor = Color.FromArgb(255, 223, 192);
             Bułgaria.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
             Bułgaria.Image = (Image)resources.GetObject("Bułgaria.Image");
-            Bułgaria.Location = new Point(1254, 427);
+            Bułgaria.Location = new Point(1268, 427);
             Bułgaria.Name = "Bułgaria";
             Bułgaria.Size = new Size(248, 240);
-            Bułgaria.TabIndex = 3;
+            Bułgaria.TabIndex = 4;
             Bułgaria.Text = "Bułgaria";
             Bułgaria.UseVisualStyleBackColor = false;
+            Bułgaria.Click += Bułgaria_Click;
             // 
             // FormB
             // 

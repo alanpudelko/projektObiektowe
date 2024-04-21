@@ -1,6 +1,6 @@
 ﻿namespace EuroExplorer
 {
-    partial class FormD
+    partial class FormF
     {
         /// <summary>
         /// Required designer variable.
@@ -28,45 +28,60 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormD));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormF));
             label1 = new Label();
-            Dania = new Button();
+            Finlandia = new Button();
+            Francja = new Button();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 48F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            label1.Location = new Point(748, 9);
+            label1.Location = new Point(772, 9);
             label1.Name = "label1";
             label1.Size = new Size(556, 86);
-            label1.TabIndex = 2;
+            label1.TabIndex = 3;
             label1.Text = "Wybierz Państwo";
             // 
-            // Dania
+            // Finlandia
             // 
-            Dania.BackColor = Color.FromArgb(255, 223, 192);
-            Dania.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            Dania.Image = (Image)resources.GetObject("Dania.Image");
-            Dania.Location = new Point(748, 385);
-            Dania.Name = "Dania";
-            Dania.Size = new Size(248, 240);
-            Dania.TabIndex = 3;
-            Dania.Text = "Dania";
-            Dania.UseVisualStyleBackColor = false;
-            Dania.Click += Dania_Click;
+            Finlandia.BackColor = Color.FromArgb(255, 223, 192);
+            Finlandia.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            Finlandia.Image = (Image)resources.GetObject("Finlandia.Image");
+            Finlandia.Location = new Point(504, 390);
+            Finlandia.Name = "Finlandia";
+            Finlandia.Size = new Size(248, 240);
+            Finlandia.TabIndex = 4;
+            Finlandia.Text = "Finlandia";
+            Finlandia.UseVisualStyleBackColor = false;
+            Finlandia.Click += Dania_Click;
             // 
-            // FormD
+            // Francja
+            // 
+            Francja.BackColor = Color.FromArgb(255, 223, 192);
+            Francja.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            Francja.Image = (Image)resources.GetObject("Francja.Image");
+            Francja.Location = new Point(1348, 390);
+            Francja.Name = "Francja";
+            Francja.Size = new Size(248, 240);
+            Francja.TabIndex = 5;
+            Francja.Text = "Francja";
+            Francja.UseVisualStyleBackColor = false;
+            Francja.Click += Francja_Click;
+            // 
+            // FormF
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
             ClientSize = new Size(1904, 1041);
-            Controls.Add(Dania);
+            Controls.Add(Francja);
+            Controls.Add(Finlandia);
             Controls.Add(label1);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "FormD";
-            Text = "FormD";
+            Name = "FormF";
+            Text = "FormF";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -74,6 +89,7 @@
         #endregion
 
         private Label label1;
-        private Button Dania;
+        private Button Finlandia;
+        private Button Francja;
     }
 }
