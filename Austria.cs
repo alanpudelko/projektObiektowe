@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Net.Http.Json;
 
 namespace EuroExplorer
 {
@@ -88,10 +89,10 @@ namespace EuroExplorer
                         string json = await response.Content.ReadAsStringAsync();
                         dynamic data = JObject.Parse(json);
 
-                        // Pobierz strefę czasową Wiednia
+
                         int timezoneOffset = data.timezone;
 
-                        // Konwertuj timestamp na datę i godzinę
+
                         DateTime viennaTime = DateTimeOffset.FromUnixTimeSeconds((long)data.dt).AddSeconds(timezoneOffset).DateTime;
 
                         InfoAustria.Text = $"Aktualna godzina w Wiedeń: {viennaTime.ToString("HH:mm:ss")}";
@@ -116,10 +117,8 @@ namespace EuroExplorer
         private void OpisAustrii_TextChanged(object sender, EventArgs e)
         {
 
-        private void OpisAustrii_TextChanged(object sender, EventArgs e)
-        {
-
         }
+
         private void InfoAustria_TextChanged(object sender, EventArgs e)
         {
 
@@ -131,6 +130,6 @@ namespace EuroExplorer
         }
     }
 }
-        }
-    }
-}
+        
+    
+
