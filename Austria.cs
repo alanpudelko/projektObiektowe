@@ -18,6 +18,7 @@ namespace EuroExplorer
         public Austria()
         {
             InitializeComponent();
+            Task task = DisplayWeatherAsync();
         }
 
 
