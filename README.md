@@ -12,3 +12,4 @@
 
 9. W otwartym folderze szukamy "EuroExplorer.csproj" klikamy 2x Lewym otworzy nam się na nowo projekt.
 10. Ciesz się funkcjonalnością programu po kompilacji.
+11.asdasdd
