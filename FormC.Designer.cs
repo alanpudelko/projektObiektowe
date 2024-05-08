@@ -33,6 +33,7 @@
             Chorwacja = new Button();
             Cypr = new Button();
             Czechy = new Button();
+            Back = new Button();
             SuspendLayout();
             // 
             // label1
@@ -84,12 +85,24 @@
             Czechy.UseVisualStyleBackColor = false;
             Czechy.Click += Czechy_Click;
             // 
+            // Back
+            // 
+            Back.BackColor = Color.FromArgb(255, 255, 192);
+            Back.Location = new Point(12, 12);
+            Back.Name = "Back";
+            Back.Size = new Size(75, 23);
+            Back.TabIndex = 7;
+            Back.Text = "Powrót";
+            Back.UseVisualStyleBackColor = false;
+            Back.Click += Back_Click;
+            // 
             // FormC
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
             ClientSize = new Size(1904, 1041);
+            Controls.Add(Back);
             Controls.Add(Czechy);
             Controls.Add(Cypr);
             Controls.Add(Chorwacja);
@@ -107,5 +120,6 @@
         private Button Chorwacja;
         private Button Cypr;
         private Button Czechy;
+        private Button Back;
     }
 }

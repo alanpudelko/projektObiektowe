@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormA));
             label1 = new Label();
             Austria = new Button();
+            Back = new Button();
             SuspendLayout();
             // 
             // label1
@@ -48,7 +49,7 @@
             Austria.BackColor = Color.FromArgb(255, 223, 192);
             Austria.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
             Austria.Image = (Image)resources.GetObject("Austria.Image");
-            Austria.Location = new Point(82, 168);
+            Austria.Location = new Point(665, 447);
             Austria.Name = "Austria";
             Austria.Size = new Size(248, 240);
             Austria.TabIndex = 1;
@@ -56,12 +57,24 @@
             Austria.UseVisualStyleBackColor = false;
             Austria.Click += Austria_Click;
             // 
+            // Back
+            // 
+            Back.BackColor = Color.FromArgb(255, 255, 192);
+            Back.Location = new Point(12, 12);
+            Back.Name = "Back";
+            Back.Size = new Size(75, 23);
+            Back.TabIndex = 6;
+            Back.Text = "Powrót";
+            Back.UseVisualStyleBackColor = false;
+            Back.Click += Back_Click;
+            // 
             // FormA
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
             ClientSize = new Size(1904, 1041);
+            Controls.Add(Back);
             Controls.Add(Austria);
             Controls.Add(label1);
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -75,5 +88,6 @@
 
         private Label label1;
         private Button Austria;
+        private Button Back;
     }
 }

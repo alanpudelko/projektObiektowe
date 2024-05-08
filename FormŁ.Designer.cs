@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormŁ));
             label1 = new Label();
             Łotwa = new Button();
+            Back = new Button();
             SuspendLayout();
             // 
             // label1
@@ -57,12 +58,24 @@
             Łotwa.UseVisualStyleBackColor = false;
             Łotwa.Click += Łotwa_Click;
             // 
+            // Back
+            // 
+            Back.BackColor = Color.FromArgb(255, 255, 192);
+            Back.Location = new Point(12, 12);
+            Back.Name = "Back";
+            Back.Size = new Size(75, 23);
+            Back.TabIndex = 14;
+            Back.Text = "Powrót";
+            Back.UseVisualStyleBackColor = false;
+            Back.Click += Back_Click;
+            // 
             // FormŁ
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
             ClientSize = new Size(1904, 1041);
+            Controls.Add(Back);
             Controls.Add(Łotwa);
             Controls.Add(label1);
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -76,5 +89,6 @@
 
         private Label label1;
         private Button Łotwa;
+        private Button Back;
     }
 }

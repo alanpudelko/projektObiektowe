@@ -33,6 +33,7 @@
             Słowacja = new Button();
             Słowenia = new Button();
             Szwecja = new Button();
+            Back = new Button();
             SuspendLayout();
             // 
             // label1
@@ -84,12 +85,24 @@
             Szwecja.UseVisualStyleBackColor = false;
             Szwecja.Click += Szwecja_Click;
             // 
+            // Back
+            // 
+            Back.BackColor = Color.FromArgb(255, 255, 192);
+            Back.Location = new Point(12, 12);
+            Back.Name = "Back";
+            Back.Size = new Size(75, 23);
+            Back.TabIndex = 19;
+            Back.Text = "Powrót";
+            Back.UseVisualStyleBackColor = false;
+            Back.Click += Back_Click;
+            // 
             // FormS
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
             ClientSize = new Size(1904, 1041);
+            Controls.Add(Back);
             Controls.Add(Szwecja);
             Controls.Add(Słowenia);
             Controls.Add(Słowacja);
@@ -108,5 +121,6 @@
         private Button Słowacja;
         private Button Słowenia;
         private Button Szwecja;
+        private Button Back;
     }
 }

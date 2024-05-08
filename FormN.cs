@@ -16,5 +16,37 @@ namespace EuroExplorer
         {
             InitializeComponent();
         }
+
+        private void Back_Click(object sender, EventArgs e)
+        {
+
+            this.Close();
+
+
+            bool form1Open = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f is Form1)
+                {
+                    form1Open = true;
+                    f.WindowState = FormWindowState.Normal;
+                    f.Activate();
+                    break;
+                }
+            }
+
+            if (!form1Open)
+            {
+                Form1 form1 = new Form1();
+                form1.Show();
+            }
+        }
+
+        private void Niemcy_Click(object sender, EventArgs e)
+        {
+            Niemcy F30=new Niemcy();
+            F30.Show();
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }

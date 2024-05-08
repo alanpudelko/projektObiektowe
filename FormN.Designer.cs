@@ -30,7 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormN));
             label1 = new Label();
-            Dania = new Button();
+            Niemcy = new Button();
+            Back = new Button();
             SuspendLayout();
             // 
             // label1
@@ -43,17 +44,29 @@
             label1.TabIndex = 3;
             label1.Text = "Wybierz Państwo";
             // 
-            // Dania
+            // Niemcy
             // 
-            Dania.BackColor = Color.FromArgb(255, 223, 192);
-            Dania.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            Dania.Image = (Image)resources.GetObject("Dania.Image");
-            Dania.Location = new Point(776, 389);
-            Dania.Name = "Dania";
-            Dania.Size = new Size(248, 240);
-            Dania.TabIndex = 4;
-            Dania.Text = "Dania";
-            Dania.UseVisualStyleBackColor = false;
+            Niemcy.BackColor = Color.FromArgb(255, 223, 192);
+            Niemcy.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            Niemcy.Image = (Image)resources.GetObject("Niemcy.Image");
+            Niemcy.Location = new Point(776, 389);
+            Niemcy.Name = "Niemcy";
+            Niemcy.Size = new Size(248, 240);
+            Niemcy.TabIndex = 4;
+            Niemcy.Text = "Niemcy";
+            Niemcy.UseVisualStyleBackColor = false;
+            Niemcy.Click += Niemcy_Click;
+            // 
+            // Back
+            // 
+            Back.BackColor = Color.FromArgb(255, 255, 192);
+            Back.Location = new Point(12, 12);
+            Back.Name = "Back";
+            Back.Size = new Size(75, 23);
+            Back.TabIndex = 16;
+            Back.Text = "Powrót";
+            Back.UseVisualStyleBackColor = false;
+            Back.Click += Back_Click;
             // 
             // FormN
             // 
@@ -61,7 +74,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
             ClientSize = new Size(1904, 1041);
-            Controls.Add(Dania);
+            Controls.Add(Back);
+            Controls.Add(Niemcy);
             Controls.Add(label1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FormN";
@@ -73,6 +87,7 @@
         #endregion
 
         private Label label1;
-        private Button Dania;
+        private Button Niemcy;
+        private Button Back;
     }
 }
