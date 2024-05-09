@@ -29,7 +29,103 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cypr));
+            Opis = new Label();
+            InfoCypr1 = new TextBox();
+            InfoCypr = new TextBox();
+            label2 = new Label();
+            label1 = new Label();
+            pictureBox1 = new PictureBox();
+            OpisCypr = new TextBox();
+            Back = new Button();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
+            // 
+            // Opis
+            // 
+            Opis.AutoSize = true;
+            Opis.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            Opis.Location = new Point(1593, 261);
+            Opis.Name = "Opis";
+            Opis.Size = new Size(131, 32);
+            Opis.TabIndex = 27;
+            Opis.Text = "Opis Live :";
+            // 
+            // InfoCypr1
+            // 
+            InfoCypr1.BackColor = Color.FromArgb(255, 224, 192);
+            InfoCypr1.Enabled = false;
+            InfoCypr1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            InfoCypr1.Location = new Point(1429, 406);
+            InfoCypr1.Multiline = true;
+            InfoCypr1.Name = "InfoCypr1";
+            InfoCypr1.Size = new Size(463, 67);
+            InfoCypr1.TabIndex = 26;
+            InfoCypr1.TextChanged += InfoCypr1_TextChanged;
+            // 
+            // InfoCypr
+            // 
+            InfoCypr.BackColor = Color.FromArgb(255, 224, 192);
+            InfoCypr.Enabled = false;
+            InfoCypr.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            InfoCypr.Location = new Point(1429, 333);
+            InfoCypr.Multiline = true;
+            InfoCypr.Name = "InfoCypr";
+            InfoCypr.Size = new Size(463, 67);
+            InfoCypr.TabIndex = 25;
+            InfoCypr.TextChanged += InfoCypr_TextChanged;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            label2.Location = new Point(1094, 261);
+            label2.Name = "label2";
+            label2.Size = new Size(155, 32);
+            label2.TabIndex = 24;
+            label2.Text = "Terytorium :";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            label1.Location = new Point(383, 194);
+            label1.Name = "label1";
+            label1.Size = new Size(79, 32);
+            label1.TabIndex = 23;
+            label1.Text = "Opis :";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(955, 333);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(437, 238);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 22;
+            pictureBox1.TabStop = false;
+            // 
+            // OpisCypr
+            // 
+            OpisCypr.BackColor = Color.FromArgb(255, 224, 192);
+            OpisCypr.Enabled = false;
+            OpisCypr.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            OpisCypr.Location = new Point(12, 261);
+            OpisCypr.Multiline = true;
+            OpisCypr.Name = "OpisCypr";
+            OpisCypr.Size = new Size(841, 617);
+            OpisCypr.TabIndex = 21;
+            OpisCypr.Text = resources.GetString("OpisCypr.Text");
+            // 
+            // Back
+            // 
+            Back.BackColor = Color.FromArgb(255, 255, 192);
+            Back.Location = new Point(12, 12);
+            Back.Name = "Back";
+            Back.Size = new Size(75, 23);
+            Back.TabIndex = 28;
+            Back.Text = "Powrót";
+            Back.UseVisualStyleBackColor = false;
+            Back.Click += Back_Click;
             // 
             // Cypr
             // 
@@ -37,12 +133,31 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
             ClientSize = new Size(1904, 1041);
+            Controls.Add(Back);
+            Controls.Add(Opis);
+            Controls.Add(InfoCypr1);
+            Controls.Add(InfoCypr);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(pictureBox1);
+            Controls.Add(OpisCypr);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Cypr";
             Text = "Cypr";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label Opis;
+        protected TextBox InfoCypr1;
+        protected TextBox InfoCypr;
+        private Label label2;
+        private Label label1;
+        private PictureBox pictureBox1;
+        protected TextBox OpisCypr;
+        private Button Back;
     }
 }

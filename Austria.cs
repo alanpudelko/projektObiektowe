@@ -129,6 +129,30 @@ namespace EuroExplorer
         {
 
         }
+
+        private void Back_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+
+            bool formAOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f is FormA)
+                {
+                    formAOpen = true;
+                    f.WindowState = FormWindowState.Normal;
+                    f.Activate();
+                    break;
+                }
+            }
+
+            if (!formAOpen)
+            {
+                Form1 form1 = new Form1();
+                form1.Show();
+            }
+        }
     }
 }
         

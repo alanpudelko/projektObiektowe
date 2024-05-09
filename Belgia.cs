@@ -16,7 +16,7 @@ namespace EuroExplorer
     public partial class Belgia : Form
     {
         public Belgia()
-        { 
+        {
             InitializeComponent();
             Task task = DisplayWeatherAsync();
         }
@@ -90,7 +90,7 @@ namespace EuroExplorer
                         string json = await response.Content.ReadAsStringAsync();
                         dynamic data = JObject.Parse(json);
 
-                        int timezoneOffset = (int)data.timezone / 3600; 
+                        int timezoneOffset = (int)data.timezone / 3600;
 
                         DateTime belgiumTime = DateTime.UtcNow.AddHours(timezoneOffset);
 
@@ -127,6 +127,30 @@ namespace EuroExplorer
         private void InfoBelgia1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Back_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+
+            bool formBOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f is FormB)
+                {
+                    formBOpen = true;
+                    f.WindowState = FormWindowState.Normal;
+                    f.Activate();
+                    break;
+                }
+            }
+
+            if (!formBOpen)
+            {
+                Form1 form1 = new Form1();
+                form1.Show();
+            }
         }
     }
 }

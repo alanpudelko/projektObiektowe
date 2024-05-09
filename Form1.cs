@@ -15,11 +15,11 @@ namespace EuroExplorer
 
         private void CountryA_Click(object sender, EventArgs e)
         {
-
+            
             FormA newfromA = new FormA();
             newfromA.Show();
             this.WindowState = FormWindowState.Minimized;
-
+            
         }
         private void CountryB_Click(object sender, EventArgs e)
         {

@@ -36,6 +36,7 @@
             label1 = new Label();
             pictureBox1 = new PictureBox();
             OpisBelgia = new TextBox();
+            Back = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -115,12 +116,24 @@
             OpisBelgia.TabIndex = 14;
             OpisBelgia.Text = resources.GetString("OpisBelgia.Text");
             // 
+            // Back
+            // 
+            Back.BackColor = Color.FromArgb(255, 255, 192);
+            Back.Location = new Point(12, 12);
+            Back.Name = "Back";
+            Back.Size = new Size(75, 23);
+            Back.TabIndex = 21;
+            Back.Text = "Powrót";
+            Back.UseVisualStyleBackColor = false;
+            Back.Click += Back_Click;
+            // 
             // Bułgaria
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
             ClientSize = new Size(1904, 1041);
+            Controls.Add(Back);
             Controls.Add(Opis);
             Controls.Add(InfoBułgaria1);
             Controls.Add(InfoBułgaria);
@@ -145,5 +158,6 @@
         private Label label1;
         private PictureBox pictureBox1;
         protected TextBox OpisBelgia;
+        private Button Back;
     }
 }
