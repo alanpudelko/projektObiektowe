@@ -146,8 +146,8 @@ namespace EuroExplorer
 
             if (!formFOpen)
             {
-                Form1 form1 = new Form1();
-                form1.Show();
+                FormF formF = new FormF();
+                formF.Show();
             }
         }
     }
