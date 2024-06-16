@@ -37,8 +37,10 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 48F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            label1.Location = new Point(741, 9);
+            label1.ForeColor = SystemColors.Menu;
+            label1.Location = new Point(667, 9);
             label1.Name = "label1";
             label1.Size = new Size(556, 86);
             label1.TabIndex = 3;
@@ -48,11 +50,12 @@
             // 
             Łotwa.AutoSize = true;
             Łotwa.BackColor = Color.FromArgb(255, 223, 192);
+            Łotwa.BackgroundImage = (Image)resources.GetObject("Łotwa.BackgroundImage");
             Łotwa.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
             Łotwa.Image = (Image)resources.GetObject("Łotwa.Image");
-            Łotwa.Location = new Point(741, 393);
+            Łotwa.Location = new Point(821, 413);
             Łotwa.Name = "Łotwa";
-            Łotwa.Size = new Size(248, 240);
+            Łotwa.Size = new Size(253, 240);
             Łotwa.TabIndex = 4;
             Łotwa.Text = "Łotwa";
             Łotwa.UseVisualStyleBackColor = false;
@@ -60,7 +63,7 @@
             // 
             // Back
             // 
-            Back.BackColor = Color.FromArgb(255, 255, 192);
+            Back.BackColor = Color.White;
             Back.Location = new Point(12, 12);
             Back.Name = "Back";
             Back.Size = new Size(75, 23);
@@ -74,6 +77,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1904, 1041);
             Controls.Add(Back);
             Controls.Add(Łotwa);

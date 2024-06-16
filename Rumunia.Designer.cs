@@ -42,7 +42,7 @@
             // 
             // Back
             // 
-            Back.BackColor = Color.FromArgb(255, 255, 192);
+            Back.BackColor = Color.White;
             Back.Location = new Point(12, 15);
             Back.Name = "Back";
             Back.Size = new Size(75, 23);
@@ -54,7 +54,9 @@
             // Opis
             // 
             Opis.AutoSize = true;
+            Opis.BackColor = Color.Transparent;
             Opis.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            Opis.ForeColor = SystemColors.Menu;
             Opis.Location = new Point(1593, 279);
             Opis.Name = "Opis";
             Opis.Size = new Size(131, 32);
@@ -63,7 +65,7 @@
             // 
             // InfoRumunia1
             // 
-            InfoRumunia1.BackColor = Color.FromArgb(255, 224, 192);
+            InfoRumunia1.BackColor = Color.White;
             InfoRumunia1.Enabled = false;
             InfoRumunia1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
             InfoRumunia1.Location = new Point(1429, 424);
@@ -75,7 +77,7 @@
             // 
             // InfoRumunia
             // 
-            InfoRumunia.BackColor = Color.FromArgb(255, 224, 192);
+            InfoRumunia.BackColor = Color.White;
             InfoRumunia.Enabled = false;
             InfoRumunia.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
             InfoRumunia.Location = new Point(1429, 351);
@@ -88,7 +90,9 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            label2.ForeColor = SystemColors.Menu;
             label2.Location = new Point(1094, 279);
             label2.Name = "label2";
             label2.Size = new Size(155, 32);
@@ -98,7 +102,9 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            label1.ForeColor = SystemColors.Menu;
             label1.Location = new Point(383, 212);
             label1.Name = "label1";
             label1.Size = new Size(79, 32);
@@ -117,7 +123,7 @@
             // 
             // OpisRumunia
             // 
-            OpisRumunia.BackColor = Color.FromArgb(255, 224, 192);
+            OpisRumunia.BackColor = Color.White;
             OpisRumunia.Enabled = false;
             OpisRumunia.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
             OpisRumunia.Location = new Point(12, 276);
@@ -132,6 +138,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1904, 1041);
             Controls.Add(Back);
             Controls.Add(Opis);

@@ -38,8 +38,10 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 48F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            label1.Location = new Point(729, 9);
+            label1.ForeColor = SystemColors.Menu;
+            label1.Location = new Point(670, 9);
             label1.Name = "label1";
             label1.Size = new Size(556, 86);
             label1.TabIndex = 3;
@@ -48,9 +50,10 @@
             // Hiszpania
             // 
             Hiszpania.BackColor = Color.FromArgb(255, 223, 192);
+            Hiszpania.BackgroundImage = (Image)resources.GetObject("Hiszpania.BackgroundImage");
             Hiszpania.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
             Hiszpania.Image = (Image)resources.GetObject("Hiszpania.Image");
-            Hiszpania.Location = new Point(469, 396);
+            Hiszpania.Location = new Point(602, 410);
             Hiszpania.Name = "Hiszpania";
             Hiszpania.Size = new Size(248, 240);
             Hiszpania.TabIndex = 4;
@@ -61,9 +64,10 @@
             // Holandia
             // 
             Holandia.BackColor = Color.FromArgb(255, 223, 192);
+            Holandia.BackgroundImage = (Image)resources.GetObject("Holandia.BackgroundImage");
             Holandia.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
             Holandia.Image = (Image)resources.GetObject("Holandia.Image");
-            Holandia.Location = new Point(1292, 396);
+            Holandia.Location = new Point(1037, 410);
             Holandia.Name = "Holandia";
             Holandia.Size = new Size(248, 240);
             Holandia.TabIndex = 5;
@@ -73,7 +77,7 @@
             // 
             // Back
             // 
-            Back.BackColor = Color.FromArgb(255, 255, 192);
+            Back.BackColor = Color.White;
             Back.Location = new Point(12, 12);
             Back.Name = "Back";
             Back.Size = new Size(75, 23);
@@ -87,6 +91,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1904, 1041);
             Controls.Add(Back);
             Controls.Add(Holandia);

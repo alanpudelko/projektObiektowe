@@ -42,7 +42,7 @@
             // 
             // Back
             // 
-            Back.BackColor = Color.FromArgb(255, 255, 192);
+            Back.BackColor = Color.White;
             Back.Location = new Point(12, 12);
             Back.Name = "Back";
             Back.Size = new Size(75, 23);
@@ -54,7 +54,9 @@
             // Opis
             // 
             Opis.AutoSize = true;
+            Opis.BackColor = Color.Transparent;
             Opis.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            Opis.ForeColor = SystemColors.Menu;
             Opis.Location = new Point(1593, 276);
             Opis.Name = "Opis";
             Opis.Size = new Size(131, 32);
@@ -63,7 +65,7 @@
             // 
             // InfoHiszpania1
             // 
-            InfoHiszpania1.BackColor = Color.FromArgb(255, 224, 192);
+            InfoHiszpania1.BackColor = Color.White;
             InfoHiszpania1.Enabled = false;
             InfoHiszpania1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
             InfoHiszpania1.Location = new Point(1429, 421);
@@ -75,7 +77,7 @@
             // 
             // InfoHiszpania
             // 
-            InfoHiszpania.BackColor = Color.FromArgb(255, 224, 192);
+            InfoHiszpania.BackColor = Color.White;
             InfoHiszpania.Enabled = false;
             InfoHiszpania.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
             InfoHiszpania.Location = new Point(1429, 348);
@@ -88,7 +90,9 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            label2.ForeColor = SystemColors.Menu;
             label2.Location = new Point(1094, 276);
             label2.Name = "label2";
             label2.Size = new Size(155, 32);
@@ -98,7 +102,9 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            label1.ForeColor = SystemColors.Menu;
             label1.Location = new Point(383, 209);
             label1.Name = "label1";
             label1.Size = new Size(79, 32);
@@ -117,7 +123,7 @@
             // 
             // OpisHiszpania
             // 
-            OpisHiszpania.BackColor = Color.FromArgb(255, 224, 192);
+            OpisHiszpania.BackColor = Color.White;
             OpisHiszpania.Enabled = false;
             OpisHiszpania.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
             OpisHiszpania.Location = new Point(12, 276);
@@ -132,6 +138,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1904, 1041);
             Controls.Add(Back);
             Controls.Add(Opis);

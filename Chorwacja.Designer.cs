@@ -43,7 +43,9 @@
             // Opis
             // 
             Opis.AutoSize = true;
+            Opis.BackColor = Color.Transparent;
             Opis.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            Opis.ForeColor = SystemColors.Menu;
             Opis.Location = new Point(1593, 220);
             Opis.Name = "Opis";
             Opis.Size = new Size(131, 32);
@@ -52,7 +54,7 @@
             // 
             // InfoChorwacja1
             // 
-            InfoChorwacja1.BackColor = Color.FromArgb(255, 224, 192);
+            InfoChorwacja1.BackColor = Color.White;
             InfoChorwacja1.Enabled = false;
             InfoChorwacja1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
             InfoChorwacja1.Location = new Point(1429, 365);
@@ -64,7 +66,7 @@
             // 
             // InfoChorwacja
             // 
-            InfoChorwacja.BackColor = Color.FromArgb(255, 224, 192);
+            InfoChorwacja.BackColor = Color.White;
             InfoChorwacja.Enabled = false;
             InfoChorwacja.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
             InfoChorwacja.Location = new Point(1429, 292);
@@ -77,7 +79,9 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            label2.ForeColor = SystemColors.Menu;
             label2.Location = new Point(1094, 220);
             label2.Name = "label2";
             label2.Size = new Size(155, 32);
@@ -87,7 +91,9 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            label1.ForeColor = SystemColors.Menu;
             label1.Location = new Point(383, 153);
             label1.Name = "label1";
             label1.Size = new Size(79, 32);
@@ -106,7 +112,7 @@
             // 
             // OpisChorwacja
             // 
-            OpisChorwacja.BackColor = Color.FromArgb(255, 224, 192);
+            OpisChorwacja.BackColor = Color.White;
             OpisChorwacja.Enabled = false;
             OpisChorwacja.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
             OpisChorwacja.Location = new Point(12, 220);
@@ -118,7 +124,7 @@
             // 
             // Back
             // 
-            Back.BackColor = Color.FromArgb(255, 255, 192);
+            Back.BackColor = Color.White;
             Back.Location = new Point(12, 12);
             Back.Name = "Back";
             Back.Size = new Size(75, 23);
@@ -132,6 +138,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1904, 1041);
             Controls.Add(Back);
             Controls.Add(Opis);

@@ -38,8 +38,10 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 48F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            label1.Location = new Point(819, 9);
+            label1.ForeColor = SystemColors.Menu;
+            label1.Location = new Point(671, 9);
             label1.Name = "label1";
             label1.Size = new Size(556, 86);
             label1.TabIndex = 3;
@@ -48,9 +50,10 @@
             // Węgry
             // 
             Węgry.BackColor = Color.FromArgb(255, 223, 192);
+            Węgry.BackgroundImage = (Image)resources.GetObject("Węgry.BackgroundImage");
             Węgry.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
             Węgry.Image = (Image)resources.GetObject("Węgry.Image");
-            Węgry.Location = new Point(548, 391);
+            Węgry.Location = new Point(609, 412);
             Węgry.Name = "Węgry";
             Węgry.Size = new Size(248, 240);
             Węgry.TabIndex = 4;
@@ -61,9 +64,10 @@
             // Włochy
             // 
             Włochy.BackColor = Color.FromArgb(255, 223, 192);
+            Włochy.BackgroundImage = (Image)resources.GetObject("Włochy.BackgroundImage");
             Włochy.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
             Włochy.Image = (Image)resources.GetObject("Włochy.Image");
-            Włochy.Location = new Point(1389, 391);
+            Włochy.Location = new Point(1036, 412);
             Włochy.Name = "Włochy";
             Włochy.Size = new Size(248, 240);
             Włochy.TabIndex = 5;
@@ -73,7 +77,7 @@
             // 
             // Back
             // 
-            Back.BackColor = Color.FromArgb(255, 255, 192);
+            Back.BackColor = Color.White;
             Back.Location = new Point(12, 12);
             Back.Name = "Back";
             Back.Size = new Size(75, 23);
@@ -87,6 +91,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1904, 1041);
             Controls.Add(Back);
             Controls.Add(Włochy);

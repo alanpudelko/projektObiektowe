@@ -37,7 +37,9 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 48F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            label1.ForeColor = SystemColors.Menu;
             label1.Location = new Point(665, 9);
             label1.Name = "label1";
             label1.Size = new Size(556, 86);
@@ -46,12 +48,13 @@
             // 
             // Austria
             // 
-            Austria.BackColor = Color.FromArgb(255, 223, 192);
+            Austria.BackColor = Color.DarkSlateBlue;
+            Austria.BackgroundImage = (Image)resources.GetObject("Austria.BackgroundImage");
             Austria.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
             Austria.Image = (Image)resources.GetObject("Austria.Image");
-            Austria.Location = new Point(665, 447);
+            Austria.Location = new Point(821, 438);
             Austria.Name = "Austria";
-            Austria.Size = new Size(248, 240);
+            Austria.Size = new Size(245, 240);
             Austria.TabIndex = 1;
             Austria.Text = "Austria";
             Austria.UseVisualStyleBackColor = false;
@@ -59,7 +62,7 @@
             // 
             // Back
             // 
-            Back.BackColor = Color.FromArgb(255, 255, 192);
+            Back.BackColor = Color.White;
             Back.Location = new Point(12, 12);
             Back.Name = "Back";
             Back.Size = new Size(75, 23);
@@ -72,7 +75,9 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(255, 224, 192);
+            BackColor = Color.Black;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1904, 1041);
             Controls.Add(Back);
             Controls.Add(Austria);

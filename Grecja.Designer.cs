@@ -42,7 +42,7 @@
             // 
             // Back
             // 
-            Back.BackColor = Color.FromArgb(255, 255, 192);
+            Back.BackColor = Color.White;
             Back.Location = new Point(12, 13);
             Back.Name = "Back";
             Back.Size = new Size(75, 23);
@@ -54,7 +54,9 @@
             // Opis
             // 
             Opis.AutoSize = true;
+            Opis.BackColor = Color.Transparent;
             Opis.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            Opis.ForeColor = SystemColors.Menu;
             Opis.Location = new Point(1593, 277);
             Opis.Name = "Opis";
             Opis.Size = new Size(131, 32);
@@ -63,7 +65,7 @@
             // 
             // InfoGrecja1
             // 
-            InfoGrecja1.BackColor = Color.FromArgb(255, 224, 192);
+            InfoGrecja1.BackColor = Color.White;
             InfoGrecja1.Enabled = false;
             InfoGrecja1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
             InfoGrecja1.Location = new Point(1429, 422);
@@ -75,7 +77,7 @@
             // 
             // InfoGrecja
             // 
-            InfoGrecja.BackColor = Color.FromArgb(255, 224, 192);
+            InfoGrecja.BackColor = Color.White;
             InfoGrecja.Enabled = false;
             InfoGrecja.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
             InfoGrecja.Location = new Point(1429, 349);
@@ -88,7 +90,9 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            label2.ForeColor = SystemColors.Menu;
             label2.Location = new Point(1094, 277);
             label2.Name = "label2";
             label2.Size = new Size(155, 32);
@@ -98,7 +102,9 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            label1.ForeColor = SystemColors.Menu;
             label1.Location = new Point(383, 210);
             label1.Name = "label1";
             label1.Size = new Size(79, 32);
@@ -108,16 +114,16 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(955, 349);
+            pictureBox1.Location = new Point(920, 349);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(437, 238);
+            pictureBox1.Size = new Size(472, 272);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 65;
             pictureBox1.TabStop = false;
             // 
             // OpisGrecja
             // 
-            OpisGrecja.BackColor = Color.FromArgb(255, 224, 192);
+            OpisGrecja.BackColor = Color.White;
             OpisGrecja.Enabled = false;
             OpisGrecja.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
             OpisGrecja.Location = new Point(12, 277);
@@ -132,6 +138,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1904, 1041);
             Controls.Add(Back);
             Controls.Add(Opis);

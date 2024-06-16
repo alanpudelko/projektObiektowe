@@ -107,11 +107,13 @@
             // 
             Title.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             Title.AutoEllipsis = true;
-            Title.AutoSize = true;
-            Title.Font = new Font("Segoe UI", 36F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            Title.BackColor = Color.Transparent;
+            Title.FlatStyle = FlatStyle.Flat;
+            Title.Font = new Font("Arial", 36F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            Title.ForeColor = SystemColors.Menu;
             Title.Location = new Point(461, 9);
             Title.Name = "Title";
-            Title.Size = new Size(1008, 65);
+            Title.Size = new Size(1024, 65);
             Title.TabIndex = 0;
             Title.Text = "Wybierz interesujące cię państwo po literze";
             Title.Click += Title_Click;
@@ -120,7 +122,7 @@
             // 
             CountryA.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             CountryA.BackColor = Color.OliveDrab;
-            CountryA.Location = new Point(35, 116);
+            CountryA.Location = new Point(19, 94);
             CountryA.Name = "CountryA";
             CountryA.Size = new Size(157, 48);
             CountryA.TabIndex = 1;
@@ -130,8 +132,9 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(35, 170);
+            pictureBox1.Location = new Point(19, 148);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(32, 31);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -142,7 +145,7 @@
             // 
             CountryB.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             CountryB.BackColor = Color.OliveDrab;
-            CountryB.Location = new Point(35, 207);
+            CountryB.Location = new Point(19, 185);
             CountryB.Name = "CountryB";
             CountryB.Size = new Size(157, 48);
             CountryB.TabIndex = 3;
@@ -152,8 +155,9 @@
             // 
             // pictureBox2
             // 
+            pictureBox2.BackColor = Color.Transparent;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(35, 261);
+            pictureBox2.Location = new Point(19, 239);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(32, 31);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -162,8 +166,9 @@
             // 
             // pictureBox3
             // 
+            pictureBox3.BackColor = Color.Transparent;
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(73, 261);
+            pictureBox3.Location = new Point(57, 239);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(32, 31);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -174,7 +179,7 @@
             // 
             CountryC.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             CountryC.BackColor = Color.OliveDrab;
-            CountryC.Location = new Point(35, 298);
+            CountryC.Location = new Point(19, 276);
             CountryC.Name = "CountryC";
             CountryC.Size = new Size(157, 48);
             CountryC.TabIndex = 6;
@@ -184,8 +189,9 @@
             // 
             // pictureBox4
             // 
+            pictureBox4.BackColor = Color.Transparent;
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(35, 352);
+            pictureBox4.Location = new Point(19, 330);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(32, 31);
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -194,8 +200,9 @@
             // 
             // pictureBox5
             // 
+            pictureBox5.BackColor = Color.Transparent;
             pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(73, 352);
+            pictureBox5.Location = new Point(57, 330);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(32, 31);
             pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -204,8 +211,9 @@
             // 
             // pictureBox6
             // 
+            pictureBox6.BackColor = Color.Transparent;
             pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(111, 352);
+            pictureBox6.Location = new Point(95, 330);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(32, 31);
             pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -216,7 +224,7 @@
             // 
             CountryD.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             CountryD.BackColor = Color.OliveDrab;
-            CountryD.Location = new Point(35, 389);
+            CountryD.Location = new Point(19, 367);
             CountryD.Name = "CountryD";
             CountryD.Size = new Size(157, 48);
             CountryD.TabIndex = 10;
@@ -226,8 +234,9 @@
             // 
             // pictureBox7
             // 
+            pictureBox7.BackColor = Color.Transparent;
             pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
-            pictureBox7.Location = new Point(35, 443);
+            pictureBox7.Location = new Point(19, 421);
             pictureBox7.Name = "pictureBox7";
             pictureBox7.Size = new Size(32, 31);
             pictureBox7.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -238,7 +247,7 @@
             // 
             CountryE.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             CountryE.BackColor = Color.OliveDrab;
-            CountryE.Location = new Point(35, 480);
+            CountryE.Location = new Point(19, 458);
             CountryE.Name = "CountryE";
             CountryE.Size = new Size(157, 48);
             CountryE.TabIndex = 12;
@@ -248,8 +257,9 @@
             // 
             // pictureBox8
             // 
+            pictureBox8.BackColor = Color.Transparent;
             pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
-            pictureBox8.Location = new Point(35, 534);
+            pictureBox8.Location = new Point(19, 512);
             pictureBox8.Name = "pictureBox8";
             pictureBox8.Size = new Size(32, 31);
             pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -260,7 +270,7 @@
             // 
             CountryF.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             CountryF.BackColor = Color.OliveDrab;
-            CountryF.Location = new Point(35, 571);
+            CountryF.Location = new Point(19, 549);
             CountryF.Name = "CountryF";
             CountryF.Size = new Size(157, 48);
             CountryF.TabIndex = 14;
@@ -270,8 +280,9 @@
             // 
             // pictureBox9
             // 
+            pictureBox9.BackColor = Color.Transparent;
             pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
-            pictureBox9.Location = new Point(35, 625);
+            pictureBox9.Location = new Point(19, 603);
             pictureBox9.Name = "pictureBox9";
             pictureBox9.Size = new Size(32, 31);
             pictureBox9.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -280,8 +291,9 @@
             // 
             // pictureBox10
             // 
+            pictureBox10.BackColor = Color.Transparent;
             pictureBox10.Image = (Image)resources.GetObject("pictureBox10.Image");
-            pictureBox10.Location = new Point(73, 625);
+            pictureBox10.Location = new Point(57, 603);
             pictureBox10.Name = "pictureBox10";
             pictureBox10.Size = new Size(32, 31);
             pictureBox10.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -292,7 +304,7 @@
             // 
             CountryG.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             CountryG.BackColor = Color.OliveDrab;
-            CountryG.Location = new Point(35, 662);
+            CountryG.Location = new Point(19, 640);
             CountryG.Name = "CountryG";
             CountryG.Size = new Size(157, 48);
             CountryG.TabIndex = 17;
@@ -302,8 +314,9 @@
             // 
             // pictureBox11
             // 
+            pictureBox11.BackColor = Color.Transparent;
             pictureBox11.Image = (Image)resources.GetObject("pictureBox11.Image");
-            pictureBox11.Location = new Point(35, 716);
+            pictureBox11.Location = new Point(19, 694);
             pictureBox11.Name = "pictureBox11";
             pictureBox11.Size = new Size(32, 31);
             pictureBox11.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -314,7 +327,7 @@
             // 
             CountryH.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             CountryH.BackColor = Color.OliveDrab;
-            CountryH.Location = new Point(35, 753);
+            CountryH.Location = new Point(19, 731);
             CountryH.Name = "CountryH";
             CountryH.Size = new Size(157, 48);
             CountryH.TabIndex = 19;
@@ -324,8 +337,9 @@
             // 
             // pictureBox12
             // 
+            pictureBox12.BackColor = Color.Transparent;
             pictureBox12.Image = (Image)resources.GetObject("pictureBox12.Image");
-            pictureBox12.Location = new Point(35, 807);
+            pictureBox12.Location = new Point(19, 785);
             pictureBox12.Name = "pictureBox12";
             pictureBox12.Size = new Size(32, 31);
             pictureBox12.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -334,8 +348,9 @@
             // 
             // pictureBox13
             // 
+            pictureBox13.BackColor = Color.Transparent;
             pictureBox13.Image = (Image)resources.GetObject("pictureBox13.Image");
-            pictureBox13.Location = new Point(73, 807);
+            pictureBox13.Location = new Point(57, 785);
             pictureBox13.Name = "pictureBox13";
             pictureBox13.Size = new Size(32, 31);
             pictureBox13.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -346,7 +361,7 @@
             // 
             CountryI.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             CountryI.BackColor = Color.OliveDrab;
-            CountryI.Location = new Point(35, 844);
+            CountryI.Location = new Point(19, 822);
             CountryI.Name = "CountryI";
             CountryI.Size = new Size(157, 48);
             CountryI.TabIndex = 22;
@@ -356,8 +371,9 @@
             // 
             // pictureBox14
             // 
+            pictureBox14.BackColor = Color.Transparent;
             pictureBox14.Image = (Image)resources.GetObject("pictureBox14.Image");
-            pictureBox14.Location = new Point(35, 898);
+            pictureBox14.Location = new Point(19, 876);
             pictureBox14.Name = "pictureBox14";
             pictureBox14.Size = new Size(32, 31);
             pictureBox14.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -368,7 +384,7 @@
             // 
             CountryL.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             CountryL.BackColor = Color.OliveDrab;
-            CountryL.Location = new Point(35, 935);
+            CountryL.Location = new Point(19, 913);
             CountryL.Name = "CountryL";
             CountryL.Size = new Size(157, 48);
             CountryL.TabIndex = 24;
@@ -378,8 +394,9 @@
             // 
             // pictureBox15
             // 
+            pictureBox15.BackColor = Color.Transparent;
             pictureBox15.Image = (Image)resources.GetObject("pictureBox15.Image");
-            pictureBox15.Location = new Point(35, 989);
+            pictureBox15.Location = new Point(19, 967);
             pictureBox15.Name = "pictureBox15";
             pictureBox15.Size = new Size(32, 31);
             pictureBox15.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -388,8 +405,9 @@
             // 
             // pictureBox16
             // 
+            pictureBox16.BackColor = Color.Transparent;
             pictureBox16.Image = (Image)resources.GetObject("pictureBox16.Image");
-            pictureBox16.Location = new Point(73, 989);
+            pictureBox16.Location = new Point(57, 967);
             pictureBox16.Name = "pictureBox16";
             pictureBox16.Size = new Size(32, 31);
             pictureBox16.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -400,7 +418,7 @@
             // 
             CountryŁ.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             CountryŁ.BackColor = Color.OliveDrab;
-            CountryŁ.Location = new Point(494, 116);
+            CountryŁ.Location = new Point(478, 94);
             CountryŁ.Name = "CountryŁ";
             CountryŁ.Size = new Size(157, 48);
             CountryŁ.TabIndex = 27;
@@ -410,8 +428,9 @@
             // 
             // pictureBox17
             // 
+            pictureBox17.BackColor = Color.Transparent;
             pictureBox17.Image = (Image)resources.GetObject("pictureBox17.Image");
-            pictureBox17.Location = new Point(494, 170);
+            pictureBox17.Location = new Point(478, 148);
             pictureBox17.Name = "pictureBox17";
             pictureBox17.Size = new Size(32, 31);
             pictureBox17.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -422,7 +441,7 @@
             // 
             CountryM.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             CountryM.BackColor = Color.OliveDrab;
-            CountryM.Location = new Point(494, 207);
+            CountryM.Location = new Point(478, 185);
             CountryM.Name = "CountryM";
             CountryM.Size = new Size(157, 48);
             CountryM.TabIndex = 29;
@@ -434,7 +453,7 @@
             // 
             CountryN.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             CountryN.BackColor = Color.OliveDrab;
-            CountryN.Location = new Point(494, 298);
+            CountryN.Location = new Point(478, 276);
             CountryN.Name = "CountryN";
             CountryN.Size = new Size(157, 48);
             CountryN.TabIndex = 30;
@@ -446,7 +465,7 @@
             // 
             CountryP.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             CountryP.BackColor = Color.OliveDrab;
-            CountryP.Location = new Point(494, 389);
+            CountryP.Location = new Point(478, 367);
             CountryP.Name = "CountryP";
             CountryP.Size = new Size(157, 48);
             CountryP.TabIndex = 31;
@@ -458,7 +477,7 @@
             // 
             CountryR.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             CountryR.BackColor = Color.OliveDrab;
-            CountryR.Location = new Point(494, 480);
+            CountryR.Location = new Point(478, 458);
             CountryR.Name = "CountryR";
             CountryR.Size = new Size(157, 48);
             CountryR.TabIndex = 32;
@@ -470,7 +489,7 @@
             // 
             CountryS.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             CountryS.BackColor = Color.OliveDrab;
-            CountryS.Location = new Point(494, 571);
+            CountryS.Location = new Point(478, 549);
             CountryS.Name = "CountryS";
             CountryS.Size = new Size(157, 48);
             CountryS.TabIndex = 33;
@@ -482,7 +501,7 @@
             // 
             CountryW.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             CountryW.BackColor = Color.OliveDrab;
-            CountryW.Location = new Point(494, 662);
+            CountryW.Location = new Point(478, 640);
             CountryW.Name = "CountryW";
             CountryW.Size = new Size(157, 48);
             CountryW.TabIndex = 34;
@@ -492,8 +511,9 @@
             // 
             // pictureBox18
             // 
+            pictureBox18.BackColor = Color.Transparent;
             pictureBox18.Image = (Image)resources.GetObject("pictureBox18.Image");
-            pictureBox18.Location = new Point(494, 261);
+            pictureBox18.Location = new Point(478, 239);
             pictureBox18.Name = "pictureBox18";
             pictureBox18.Size = new Size(32, 31);
             pictureBox18.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -502,8 +522,9 @@
             // 
             // pictureBox19
             // 
+            pictureBox19.BackColor = Color.Transparent;
             pictureBox19.Image = (Image)resources.GetObject("pictureBox19.Image");
-            pictureBox19.Location = new Point(494, 352);
+            pictureBox19.Location = new Point(478, 330);
             pictureBox19.Name = "pictureBox19";
             pictureBox19.Size = new Size(32, 31);
             pictureBox19.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -512,8 +533,9 @@
             // 
             // pictureBox20
             // 
+            pictureBox20.BackColor = Color.Transparent;
             pictureBox20.Image = (Image)resources.GetObject("pictureBox20.Image");
-            pictureBox20.Location = new Point(494, 534);
+            pictureBox20.Location = new Point(478, 512);
             pictureBox20.Name = "pictureBox20";
             pictureBox20.Size = new Size(32, 31);
             pictureBox20.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -522,8 +544,9 @@
             // 
             // pictureBox22
             // 
+            pictureBox22.BackColor = Color.Transparent;
             pictureBox22.Image = (Image)resources.GetObject("pictureBox22.Image");
-            pictureBox22.Location = new Point(494, 443);
+            pictureBox22.Location = new Point(478, 421);
             pictureBox22.Name = "pictureBox22";
             pictureBox22.Size = new Size(32, 31);
             pictureBox22.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -532,8 +555,9 @@
             // 
             // pictureBox23
             // 
+            pictureBox23.BackColor = Color.Transparent;
             pictureBox23.Image = (Image)resources.GetObject("pictureBox23.Image");
-            pictureBox23.Location = new Point(532, 443);
+            pictureBox23.Location = new Point(516, 421);
             pictureBox23.Name = "pictureBox23";
             pictureBox23.Size = new Size(32, 31);
             pictureBox23.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -542,8 +566,9 @@
             // 
             // pictureBox24
             // 
+            pictureBox24.BackColor = Color.Transparent;
             pictureBox24.Image = (Image)resources.GetObject("pictureBox24.Image");
-            pictureBox24.Location = new Point(494, 625);
+            pictureBox24.Location = new Point(478, 603);
             pictureBox24.Name = "pictureBox24";
             pictureBox24.Size = new Size(32, 31);
             pictureBox24.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -552,8 +577,9 @@
             // 
             // pictureBox25
             // 
+            pictureBox25.BackColor = Color.Transparent;
             pictureBox25.Image = (Image)resources.GetObject("pictureBox25.Image");
-            pictureBox25.Location = new Point(532, 625);
+            pictureBox25.Location = new Point(516, 603);
             pictureBox25.Name = "pictureBox25";
             pictureBox25.Size = new Size(32, 31);
             pictureBox25.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -562,8 +588,9 @@
             // 
             // pictureBox26
             // 
+            pictureBox26.BackColor = Color.Transparent;
             pictureBox26.Image = (Image)resources.GetObject("pictureBox26.Image");
-            pictureBox26.Location = new Point(570, 625);
+            pictureBox26.Location = new Point(554, 603);
             pictureBox26.Name = "pictureBox26";
             pictureBox26.Size = new Size(32, 31);
             pictureBox26.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -572,8 +599,9 @@
             // 
             // pictureBox27
             // 
+            pictureBox27.BackColor = Color.Transparent;
             pictureBox27.Image = (Image)resources.GetObject("pictureBox27.Image");
-            pictureBox27.Location = new Point(494, 716);
+            pictureBox27.Location = new Point(478, 694);
             pictureBox27.Name = "pictureBox27";
             pictureBox27.Size = new Size(32, 31);
             pictureBox27.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -582,8 +610,9 @@
             // 
             // pictureBox28
             // 
+            pictureBox28.BackColor = Color.Transparent;
             pictureBox28.Image = (Image)resources.GetObject("pictureBox28.Image");
-            pictureBox28.Location = new Point(532, 716);
+            pictureBox28.Location = new Point(516, 694);
             pictureBox28.Name = "pictureBox28";
             pictureBox28.Size = new Size(32, 31);
             pictureBox28.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -594,7 +623,9 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(255, 224, 192);
+            BackColor = Color.Chartreuse;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1904, 1041);
             Controls.Add(pictureBox28);
             Controls.Add(pictureBox27);
@@ -672,7 +703,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox27).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox28).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion

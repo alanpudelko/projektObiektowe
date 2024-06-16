@@ -38,8 +38,10 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 48F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            label1.Location = new Point(807, 9);
+            label1.ForeColor = SystemColors.Menu;
+            label1.Location = new Point(667, 12);
             label1.Name = "label1";
             label1.Size = new Size(556, 86);
             label1.TabIndex = 1;
@@ -48,9 +50,10 @@
             // Belgia
             // 
             Belgia.BackColor = Color.FromArgb(255, 223, 192);
+            Belgia.BackgroundImage = (Image)resources.GetObject("Belgia.BackgroundImage");
             Belgia.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
             Belgia.Image = (Image)resources.GetObject("Belgia.Image");
-            Belgia.Location = new Point(342, 427);
+            Belgia.Location = new Point(604, 413);
             Belgia.Name = "Belgia";
             Belgia.Size = new Size(248, 240);
             Belgia.TabIndex = 2;
@@ -61,9 +64,10 @@
             // Bułgaria
             // 
             Bułgaria.BackColor = Color.FromArgb(255, 223, 192);
+            Bułgaria.BackgroundImage = (Image)resources.GetObject("Bułgaria.BackgroundImage");
             Bułgaria.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
             Bułgaria.Image = (Image)resources.GetObject("Bułgaria.Image");
-            Bułgaria.Location = new Point(1268, 427);
+            Bułgaria.Location = new Point(1039, 413);
             Bułgaria.Name = "Bułgaria";
             Bułgaria.Size = new Size(248, 240);
             Bułgaria.TabIndex = 4;
@@ -73,7 +77,7 @@
             // 
             // Back
             // 
-            Back.BackColor = Color.FromArgb(255, 255, 192);
+            Back.BackColor = Color.White;
             Back.Location = new Point(12, 12);
             Back.Name = "Back";
             Back.Size = new Size(75, 23);
@@ -87,6 +91,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1904, 1041);
             Controls.Add(Back);
             Controls.Add(Bułgaria);

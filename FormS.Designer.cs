@@ -39,8 +39,10 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 48F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            label1.Location = new Point(797, 9);
+            label1.ForeColor = SystemColors.Menu;
+            label1.Location = new Point(666, 9);
             label1.Name = "label1";
             label1.Size = new Size(556, 86);
             label1.TabIndex = 3;
@@ -49,9 +51,10 @@
             // Słowacja
             // 
             Słowacja.BackColor = Color.FromArgb(255, 223, 192);
+            Słowacja.BackgroundImage = (Image)resources.GetObject("Słowacja.BackgroundImage");
             Słowacja.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
             Słowacja.Image = (Image)resources.GetObject("Słowacja.Image");
-            Słowacja.Location = new Point(308, 375);
+            Słowacja.Location = new Point(158, 411);
             Słowacja.Name = "Słowacja";
             Słowacja.Size = new Size(248, 240);
             Słowacja.TabIndex = 4;
@@ -62,9 +65,10 @@
             // Słowenia
             // 
             Słowenia.BackColor = Color.FromArgb(255, 223, 192);
+            Słowenia.BackgroundImage = (Image)resources.GetObject("Słowenia.BackgroundImage");
             Słowenia.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
             Słowenia.Image = (Image)resources.GetObject("Słowenia.Image");
-            Słowenia.Location = new Point(919, 375);
+            Słowenia.Location = new Point(832, 411);
             Słowenia.Name = "Słowenia";
             Słowenia.Size = new Size(248, 240);
             Słowenia.TabIndex = 5;
@@ -75,9 +79,10 @@
             // Szwecja
             // 
             Szwecja.BackColor = Color.FromArgb(255, 223, 192);
+            Szwecja.BackgroundImage = (Image)resources.GetObject("Szwecja.BackgroundImage");
             Szwecja.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
             Szwecja.Image = (Image)resources.GetObject("Szwecja.Image");
-            Szwecja.Location = new Point(1532, 375);
+            Szwecja.Location = new Point(1488, 411);
             Szwecja.Name = "Szwecja";
             Szwecja.Size = new Size(248, 240);
             Szwecja.TabIndex = 6;
@@ -87,7 +92,7 @@
             // 
             // Back
             // 
-            Back.BackColor = Color.FromArgb(255, 255, 192);
+            Back.BackColor = Color.White;
             Back.Location = new Point(12, 12);
             Back.Name = "Back";
             Back.Size = new Size(75, 23);
@@ -101,6 +106,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1904, 1041);
             Controls.Add(Back);
             Controls.Add(Szwecja);

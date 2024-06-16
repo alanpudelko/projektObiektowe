@@ -37,8 +37,10 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 48F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            label1.Location = new Point(804, 9);
+            label1.ForeColor = SystemColors.Menu;
+            label1.Location = new Point(670, 9);
             label1.Name = "label1";
             label1.Size = new Size(556, 86);
             label1.TabIndex = 3;
@@ -47,9 +49,10 @@
             // Rumunia
             // 
             Rumunia.BackColor = Color.FromArgb(255, 223, 192);
+            Rumunia.BackgroundImage = (Image)resources.GetObject("Rumunia.BackgroundImage");
             Rumunia.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
             Rumunia.Image = (Image)resources.GetObject("Rumunia.Image");
-            Rumunia.Location = new Point(804, 389);
+            Rumunia.Location = new Point(834, 413);
             Rumunia.Name = "Rumunia";
             Rumunia.Size = new Size(248, 240);
             Rumunia.TabIndex = 4;
@@ -59,7 +62,7 @@
             // 
             // Back
             // 
-            Back.BackColor = Color.FromArgb(255, 255, 192);
+            Back.BackColor = Color.White;
             Back.Location = new Point(12, 12);
             Back.Name = "Back";
             Back.Size = new Size(75, 23);
@@ -73,6 +76,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1904, 1041);
             Controls.Add(Back);
             Controls.Add(Rumunia);

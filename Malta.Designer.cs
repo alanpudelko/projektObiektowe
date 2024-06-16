@@ -42,7 +42,7 @@
             // 
             // Back
             // 
-            Back.BackColor = Color.FromArgb(255, 255, 192);
+            Back.BackColor = Color.White;
             Back.Location = new Point(12, 14);
             Back.Name = "Back";
             Back.Size = new Size(75, 23);
@@ -54,7 +54,9 @@
             // Opis
             // 
             Opis.AutoSize = true;
+            Opis.BackColor = Color.Transparent;
             Opis.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            Opis.ForeColor = SystemColors.Menu;
             Opis.Location = new Point(1593, 278);
             Opis.Name = "Opis";
             Opis.Size = new Size(131, 32);
@@ -63,7 +65,7 @@
             // 
             // InfoMalta1
             // 
-            InfoMalta1.BackColor = Color.FromArgb(255, 224, 192);
+            InfoMalta1.BackColor = Color.White;
             InfoMalta1.Enabled = false;
             InfoMalta1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
             InfoMalta1.Location = new Point(1429, 423);
@@ -75,7 +77,7 @@
             // 
             // InfoMalta
             // 
-            InfoMalta.BackColor = Color.FromArgb(255, 224, 192);
+            InfoMalta.BackColor = Color.White;
             InfoMalta.Enabled = false;
             InfoMalta.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
             InfoMalta.Location = new Point(1429, 350);
@@ -88,7 +90,9 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            label2.ForeColor = SystemColors.Menu;
             label2.Location = new Point(1094, 278);
             label2.Name = "label2";
             label2.Size = new Size(155, 32);
@@ -98,7 +102,9 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            label1.ForeColor = SystemColors.Menu;
             label1.Location = new Point(383, 211);
             label1.Name = "label1";
             label1.Size = new Size(79, 32);
@@ -117,7 +123,7 @@
             // 
             // OpisMalta
             // 
-            OpisMalta.BackColor = Color.FromArgb(255, 224, 192);
+            OpisMalta.BackColor = Color.White;
             OpisMalta.Enabled = false;
             OpisMalta.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
             OpisMalta.Location = new Point(12, 278);
@@ -132,6 +138,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1904, 1041);
             Controls.Add(Back);
             Controls.Add(Opis);

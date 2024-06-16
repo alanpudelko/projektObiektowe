@@ -43,7 +43,9 @@
             // Opis
             // 
             Opis.AutoSize = true;
+            Opis.BackColor = Color.Transparent;
             Opis.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            Opis.ForeColor = SystemColors.Menu;
             Opis.Location = new Point(1593, 261);
             Opis.Name = "Opis";
             Opis.Size = new Size(131, 32);
@@ -52,7 +54,7 @@
             // 
             // InfoCypr1
             // 
-            InfoCypr1.BackColor = Color.FromArgb(255, 224, 192);
+            InfoCypr1.BackColor = Color.White;
             InfoCypr1.Enabled = false;
             InfoCypr1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
             InfoCypr1.Location = new Point(1429, 406);
@@ -64,7 +66,7 @@
             // 
             // InfoCypr
             // 
-            InfoCypr.BackColor = Color.FromArgb(255, 224, 192);
+            InfoCypr.BackColor = Color.White;
             InfoCypr.Enabled = false;
             InfoCypr.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
             InfoCypr.Location = new Point(1429, 333);
@@ -77,17 +79,22 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            label2.ForeColor = SystemColors.Menu;
             label2.Location = new Point(1094, 261);
             label2.Name = "label2";
             label2.Size = new Size(155, 32);
             label2.TabIndex = 24;
             label2.Text = "Terytorium :";
+            label2.Click += label2_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            label1.ForeColor = Color.White;
             label1.Location = new Point(383, 194);
             label1.Name = "label1";
             label1.Size = new Size(79, 32);
@@ -106,7 +113,7 @@
             // 
             // OpisCypr
             // 
-            OpisCypr.BackColor = Color.FromArgb(255, 224, 192);
+            OpisCypr.BackColor = Color.White;
             OpisCypr.Enabled = false;
             OpisCypr.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
             OpisCypr.Location = new Point(12, 261);
@@ -118,7 +125,7 @@
             // 
             // Back
             // 
-            Back.BackColor = Color.FromArgb(255, 255, 192);
+            Back.BackColor = Color.White;
             Back.Location = new Point(12, 12);
             Back.Name = "Back";
             Back.Size = new Size(75, 23);
@@ -132,6 +139,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1904, 1041);
             Controls.Add(Back);
             Controls.Add(Opis);
