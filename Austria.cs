@@ -94,7 +94,10 @@ namespace EuroExplorer
                         int timezoneOffset = data.timezone;
 
 
-                        DateTime viennaTime = DateTimeOffset.FromUnixTimeSeconds((long)data.dt).AddSeconds(timezoneOffset).DateTime;
+                        TimeZoneInfo viennaTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Central European Standard Time");
+
+                        
+                        DateTime viennaTime = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, viennaTimeZone);
 
                         InfoAustria.Text = $"Aktualna godzina w Wiedeń: {viennaTime.ToString("HH:mm:ss")}";
                     }

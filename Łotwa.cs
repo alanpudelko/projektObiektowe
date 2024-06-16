@@ -78,7 +78,7 @@ namespace EuroExplorer
             try
             {
                 string apiKey = "22feb2021db55d19eb0608f7237cb536";
-                string apiUrl = $"http://api.openweathermap.org/data/2.5/weather?q=Zagreb&appid={apiKey}&units=metric";
+                string apiUrl = $"http://api.openweathermap.org/data/2.5/weather?q=Ryga&appid={apiKey}&units=metric";
 
                 using (var client = new HttpClient())
                 {

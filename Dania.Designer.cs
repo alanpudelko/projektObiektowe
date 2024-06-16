@@ -43,7 +43,9 @@
             // Opis
             // 
             Opis.AutoSize = true;
+            Opis.BackColor = Color.Transparent;
             Opis.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            Opis.ForeColor = SystemColors.Menu;
             Opis.Location = new Point(1593, 295);
             Opis.Name = "Opis";
             Opis.Size = new Size(131, 32);
@@ -52,7 +54,7 @@
             // 
             // InfoDania1
             // 
-            InfoDania1.BackColor = Color.FromArgb(255, 224, 192);
+            InfoDania1.BackColor = Color.White;
             InfoDania1.Enabled = false;
             InfoDania1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
             InfoDania1.Location = new Point(1429, 440);
@@ -64,7 +66,7 @@
             // 
             // InfoDania
             // 
-            InfoDania.BackColor = Color.FromArgb(255, 224, 192);
+            InfoDania.BackColor = Color.White;
             InfoDania.Enabled = false;
             InfoDania.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
             InfoDania.Location = new Point(1429, 367);
@@ -77,7 +79,9 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            label2.ForeColor = SystemColors.Menu;
             label2.Location = new Point(1094, 295);
             label2.Name = "label2";
             label2.Size = new Size(155, 32);
@@ -87,7 +91,9 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            label1.ForeColor = SystemColors.Menu;
             label1.Location = new Point(383, 228);
             label1.Name = "label1";
             label1.Size = new Size(79, 32);
@@ -106,7 +112,7 @@
             // 
             // OpisDania
             // 
-            OpisDania.BackColor = Color.FromArgb(255, 224, 192);
+            OpisDania.BackColor = Color.White;
             OpisDania.Enabled = false;
             OpisDania.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
             OpisDania.Location = new Point(12, 295);
@@ -118,7 +124,7 @@
             // 
             // Back
             // 
-            Back.BackColor = Color.FromArgb(255, 255, 192);
+            Back.BackColor = Color.White;
             Back.Location = new Point(12, 12);
             Back.Name = "Back";
             Back.Size = new Size(75, 23);
@@ -132,6 +138,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1904, 1041);
             Controls.Add(Back);
             Controls.Add(Opis);

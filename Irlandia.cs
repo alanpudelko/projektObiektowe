@@ -78,7 +78,7 @@ namespace EuroExplorer
             try
             {
                 string apiKey = "22feb2021db55d19eb0608f7237cb536";
-                string apiUrl = $"http://api.openweathermap.org/data/2.5/weather?q=Zagreb&appid={apiKey}&units=metric";
+                string apiUrl = $"http://api.openweathermap.org/data/2.5/weather?q=Dublin&appid={apiKey}&units=metric";
 
                 using (var client = new HttpClient())
                 {
@@ -91,11 +91,16 @@ namespace EuroExplorer
 
                         int timezoneOffset = (int)data.timezone / 3600;
 
-                        DateTime DublinTime = DateTime.UtcNow.AddHours(timezoneOffset);
+                        TimeZoneInfo dublinTimeZone = TimeZoneInfo.FindSystemTimeZoneById("GMT Standard Time");
 
-                        InfoIrlandia.Text = $"Aktualna godzina w Dublin: {DublinTime.ToString("HH:mm:ss")}";
+                        
+                        DateTime dublinTime = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, dublinTimeZone);
+
+                        InfoIrlandia.Text = $"Aktualna godzina w Dublin: {dublinTime.ToString("HH:mm:ss")}";
+
                     }
                     else
+
                     {
                         MessageBox.Show("Wystąpił problem podczas pobierania danych z serwera.");
                     }

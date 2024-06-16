@@ -78,7 +78,7 @@ namespace EuroExplorer
             try
             {
                 string apiKey = "22feb2021db55d19eb0608f7237cb536";
-                string apiUrl = $"http://api.openweathermap.org/data/2.5/weather?q=Zagreb&appid={apiKey}&units=metric";
+                string apiUrl = $"http://api.openweathermap.org/data/2.5/weather?q=Rome&appid={apiKey}&units=metric";
 
                 using (var client = new HttpClient())
                 {
@@ -91,9 +91,12 @@ namespace EuroExplorer
 
                         int timezoneOffset = (int)data.timezone / 3600;
 
-                        DateTime RomeTime = DateTime.UtcNow.AddHours(timezoneOffset);
+                        TimeZoneInfo romeTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Central European Standard Time");
 
-                        InfoWłochy.Text = $"Aktualna godzina w Rome: {RomeTime.ToString("HH:mm:ss")}";
+                        
+                        DateTime romeTime = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, romeTimeZone);
+
+                        InfoWłochy.Text = $"Aktualna godzina w Rome: {romeTime.ToString("HH:mm:ss")}";
                     }
                     else
                     {
