@@ -82,6 +82,11 @@ namespace TerraVision
                 if (mouseEventArgs.Button != MouseButtons.Left) return;
                 Cursor.Current = Cursors.WaitCursor;
                 var country = await GetCountryInfoByItude(latLng.Lat, latLng.Lng);
+                if (country == null)
+                {
+                    Cursor.Current = Cursors.Default;
+                    return;
+                }
                 var countryInfoForm = new CountryInfo();
                 countryInfoForm.ShowCountryInfo(country);
                 countryInfoForm.ShowDialog();
@@ -108,13 +113,16 @@ namespace TerraVision
             var countryInfoData = JObject.Parse(countryInfoResponse);
             var countryCode = countryInfoData["countryCode"]?.ToString();
             var countryTimezoneName = countryInfoData["localityInfo"]?["informative"]?[1]?["name"]?.ToString();
-
+            
+            if (countryCode != null && countryCode.Length == 0)
+            {
+                MessageBox.Show("Country not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            
             var allCountries = await _httpClient.GetStringAsync("https://restcountries.com/v3.1/all");
             var countriesData = JArray.Parse(allCountries);
             var country = countriesData.SelectToken($"$[?(@.cca2 == '{countryCode}')]");
-            
-            if (country == null) return null;
-            
             var countryCommonName = country["name"]?["common"]?.ToString();
             var countryOfficialName = country["name"]?["official"]?.ToString();
             var countryCapital = country["capital"]?[0]?.ToString();
