@@ -52,6 +52,12 @@ namespace TerraVision
             sidebar.BackColor = Color.White;
             container.Controls.Add(sidebar);
             
+            Button logoutButton = new Button();
+            logoutButton.Text = "Logout";
+            logoutButton.Dock = DockStyle.Bottom;
+            logoutButton.Click += LogoutButton_Click;
+            sidebar.Controls.Add(logoutButton);
+            
             searchBox = new ComboBox();
             searchBox.Dock = DockStyle.Top;
             searchBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
@@ -72,7 +78,7 @@ namespace TerraVision
             gmap.MapProvider = GMapProviders.GoogleMap;
             gmap.DragButton = MouseButtons.Left;
             gmap.Position = new PointLatLng(51.5074, -0.1278); // London
-            gmap.MinZoom = 2;
+            gmap.MinZoom = 3;
             gmap.MaxZoom = 5;
             gmap.Zoom = 3;
             gmap.AutoScroll = true;
@@ -81,10 +87,12 @@ namespace TerraVision
             {
                 if (mouseEventArgs.Button == MouseButtons.Left)
                 {
+                    Cursor.Current = Cursors.WaitCursor;
                     var country = await GetCountryInfoByItude(latLng.Lat, latLng.Lng);
                     var countryInfoForm = new CountryInfo();
                     countryInfoForm.ShowCountryInfo(country);
                     countryInfoForm.ShowDialog();
+                    Cursor.Current = Cursors.Default;
                 }
             };
             
@@ -97,7 +105,13 @@ namespace TerraVision
                 }
             }
         }
-
+        
+        private void LogoutButton_Click(object sender, EventArgs e)
+        {
+            var login = new Login();
+            login.Show();
+            this.Close();
+        }
         private async Task<Country> GetCountryInfoByItude(double lat, double lng)
         {
             var countryInfoResponse = await httpClient.GetStringAsync($"https://api.bigdatacloud.net/data/reverse-geocode-client?latitude={lat}&longitude={lng}&localityLanguage=en");
@@ -110,7 +124,7 @@ namespace TerraVision
             var country = countriesData.SelectToken($"$[?(@.cca2 == '{countryCode}')]");
             var countryCommonName = country["name"]["common"].ToString();
             var countryOfficialName = country["name"]["official"].ToString();
-            var countryCapital = country["capital"].ToString();
+            var countryCapital = country["capital"][0].ToString();
             var countryCurrencies = country["currencies"].ToString(); // key: { name, symbol }
             var countryContinents = country["continents"][0].ToString();
             var countrySubRegion = country["subregion"].ToString();
@@ -191,7 +205,7 @@ namespace TerraVision
             var countryCommonName = country["name"]["common"].ToString();
             var countryOfficialName = country["name"]["official"].ToString();
             var countryCode = country["cca2"].ToString();
-            var countryCapital = country["capital"].ToString();
+            var countryCapital = country["capital"][0].ToString();
             var countryCurrencies = country["currencies"].ToString(); // key: { name, symbol }
             var countryContinents = country["continents"][0].ToString();
             var countrySubRegion = country["subregion"].ToString();
