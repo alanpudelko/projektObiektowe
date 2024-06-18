@@ -54,6 +54,12 @@ namespace TerraVision
             string hashedPassword = HashPassword(password);
             var users = LoadUsers();
 
+            if (string.IsNullOrWhiteSpace(usernameTextBox.Text) || string.IsNullOrWhiteSpace(passwordTextBox.Text))
+            {
+                MessageBox.Show("Pola nazwa użytkownika i hasło nie mogą być puste.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            
             if (UserExists(users, username))
             {
                 MessageBox.Show("User already exists. Try another username.", "Registration Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
