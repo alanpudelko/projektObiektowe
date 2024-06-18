@@ -18,6 +18,8 @@ namespace TerraVision
     public partial class Login : Form
     {
         private readonly string _dataPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "users.json");
+        private const int SaltSize = 32;
+
         public Login()
         {
             InitializeComponent();
@@ -30,7 +32,7 @@ namespace TerraVision
             Cursor.Current = Cursors.WaitCursor;
             string username = usernameTextBox.Text;
             string password = passwordTextBox.Text;
-            string hashedPassword = HashPassword(password);
+
             var users = LoadUsers();
 
             if (!UserExists(users, username))
@@ -41,13 +43,15 @@ namespace TerraVision
             }
 
             var user = users.Find(u => u.Username == username);
+            string hashedPassword = HashAndSaltPassword(password, Convert.FromBase64String(user.Salt));
+
             if (user.Password != hashedPassword)
             {
                 Cursor.Current = Cursors.Default;
                 MessageBox.Show("Incorrect password.", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            
+
             var loggedInUserPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "loggedInUser.json");
             var serializedData = JsonConvert.SerializeObject(user);
             File.WriteAllText(loggedInUserPath, serializedData);
@@ -75,6 +79,7 @@ namespace TerraVision
             }
             return null;
         }
+
         private List<User> LoadUsers()
         {
             if (File.Exists(_dataPath))
@@ -90,19 +95,24 @@ namespace TerraVision
             return users.Exists(user => user.Username == username);
         }
 
-        private string HashPassword(string password)
+        private string HashAndSaltPassword(string password, byte[] salt)
         {
-            SHA256 sha256Hash;
-            using (sha256Hash = SHA256.Create())
+            using (var sha256Hash = SHA256.Create())
             {
-                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(password));
+                byte[] passwordBytes = Encoding.UTF8.GetBytes(password);
+                byte[] passwordWithSaltBytes = new byte[passwordBytes.Length + salt.Length];
 
-                StringBuilder builder = new StringBuilder();
-                for (int i = 0; i < bytes.Length; i++)
+                for (int i = 0; i < passwordBytes.Length; i++)
                 {
-                    builder.Append(bytes[i].ToString("x2"));
+                    passwordWithSaltBytes[i] = passwordBytes[i];
                 }
-                return builder.ToString();
+                for (int i = 0; i < salt.Length; i++)
+                {
+                    passwordWithSaltBytes[passwordBytes.Length + i] = salt[i];
+                }
+
+                byte[] hashedBytes = sha256Hash.ComputeHash(passwordWithSaltBytes);
+                return BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
             }
         }
     }

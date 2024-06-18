@@ -17,6 +17,7 @@ namespace TerraVision
     public partial class Register : Form
     {
         private readonly string _dataPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "users.json");
+        private const int SaltSize = 32;
         public Register()
         {
             InitializeComponent();
@@ -51,7 +52,6 @@ namespace TerraVision
         {
             string username = usernameTextBox.Text;
             string password = passwordTextBox.Text;
-            string hashedPassword = HashPassword(password);
             var users = LoadUsers();
 
             if (string.IsNullOrWhiteSpace(usernameTextBox.Text) || string.IsNullOrWhiteSpace(passwordTextBox.Text))
@@ -66,11 +66,15 @@ namespace TerraVision
                 return;
             }
 
+            byte[] salt = GenerateSalt();
+            string hashedPassword = HashAndSaltPassword(password, salt);
+
             var user = new User
             {
                 Id = users.Count + 1,
                 Username = username,
                 Password = hashedPassword,
+                Salt = Convert.ToBase64String(salt),
                 SearchHistory = new List<string>(),
                 HomeLocation = new List<string>(2),
                 Country = "Poland"
@@ -115,21 +119,45 @@ namespace TerraVision
         {
             return users.Exists(user => user.Username == username);
         }
-
-        private string HashPassword(string password)
+        private byte[] GenerateSalt()
         {
-            SHA256 sha256Hash;
-            using (sha256Hash = SHA256.Create())
+            using (var rngCryptoServiceProvider = new RNGCryptoServiceProvider())
             {
-                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(password));
-
-                StringBuilder builder = new StringBuilder();
-                for (int i = 0; i < bytes.Length; i++)
-                {
-                    builder.Append(bytes[i].ToString("x2"));
-                }
-                return builder.ToString();
+                byte[] salt = new byte[SaltSize];
+                rngCryptoServiceProvider.GetBytes(salt);
+                return salt;
             }
         }
+        private string HashAndSaltPassword(string password, byte[] salt)
+        {
+            using (var sha256Hash = SHA256.Create())
+            {
+                byte[] passwordBytes = Encoding.UTF8.GetBytes(password);
+                byte[] passwordWithSaltBytes = new byte[passwordBytes.Length + salt.Length];
+
+                for (int i = 0; i < passwordBytes.Length; i++)
+                {
+                    passwordWithSaltBytes[i] = passwordBytes[i];
+                }
+                for (int i = 0; i < salt.Length; i++)
+                {
+                    passwordWithSaltBytes[passwordBytes.Length + i] = salt[i];
+                }
+
+                byte[] hashedBytes = sha256Hash.ComputeHash(passwordWithSaltBytes);
+                return BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
+            }
+        }
+    }
+    public class User
+    {
+        public int Id { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public string Salt { get; set; } 
+
+        public List<string> SearchHistory { get; set; }
+        public List<string> HomeLocation { get; set; }
+        public string Country { get; set; }
     }
 }
