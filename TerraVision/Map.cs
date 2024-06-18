@@ -123,6 +123,9 @@ namespace TerraVision
             var allCountries = await _httpClient.GetStringAsync("https://restcountries.com/v3.1/all");
             var countriesData = JArray.Parse(allCountries);
             var country = countriesData.SelectToken($"$[?(@.cca2 == '{countryCode}')]");
+            
+            if (country == null) return null;
+            
             var countryCommonName = country["name"]?["common"]?.ToString();
             var countryOfficialName = country["name"]?["official"]?.ToString();
             var countryCapital = country["capital"]?[0]?.ToString();
