@@ -19,6 +19,7 @@ namespace TerraVision
             base.Dispose(disposing);
         }
 
+
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
