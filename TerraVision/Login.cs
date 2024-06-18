@@ -3,6 +3,7 @@ using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography;
@@ -26,6 +27,7 @@ namespace TerraVision
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             string username = usernameTextBox.Text;
             string password = passwordTextBox.Text;
             string hashedPassword = HashPassword(password);
@@ -33,6 +35,7 @@ namespace TerraVision
 
             if (!UserExists(users, username))
             {
+                Cursor.Current = Cursors.Default;
                 MessageBox.Show("User does not exist.", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -40,15 +43,19 @@ namespace TerraVision
             var user = users.Find(u => u.Username == username);
             if (user.Password != hashedPassword)
             {
+                Cursor.Current = Cursors.Default;
                 MessageBox.Show("Incorrect password.", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            
+            var loggedInUserPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "loggedInUser.json");
+            var serializedData = JsonConvert.SerializeObject(user);
+            File.WriteAllText(loggedInUserPath, serializedData);
 
-            MessageBox.Show("User logged in successfully.", "Login Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            var mapForm = new Map();
+            var mapForm = new Map(user);
             mapForm.Show();
             this.Hide();
+            Cursor.Current = Cursors.Default;
         }
 
         private void SwitchToRegisterButton_Click(object sender, EventArgs e)
@@ -58,6 +65,16 @@ namespace TerraVision
             registerForm.Show();
         }
 
+        public User GetLoggedInUser()
+        {
+            var loggedInUserPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "loggedInUser.json");
+            if (File.Exists(loggedInUserPath))
+            {
+                var jsonData = File.ReadAllText(loggedInUserPath);
+                return JsonConvert.DeserializeObject<User>(jsonData);
+            }
+            return null;
+        }
         private List<User> LoadUsers()
         {
             if (File.Exists(_dataPath))

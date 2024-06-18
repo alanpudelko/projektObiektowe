@@ -83,6 +83,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CountryInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CountryInfo.Designer.cs">
+      <DependentUpon>CountryInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
