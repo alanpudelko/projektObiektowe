@@ -1,29 +1,23 @@
 ﻿using System;
-using System.IO;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
 using GMap.NET;
 using GMap.NET.MapProviders;
 using GMap.NET.WindowsForms;
-using GMap.NET.Projections;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using TerraVision.Models;
 
 namespace TerraVision
 {
-    public partial class Map : Form
+    public partial class Map : CustomForm
     {
-        private GMapControl gmap;
-        private HttpClient httpClient;
-        private Panel sidebar;
-        private ComboBox searchBox;
-        private Panel container;
-        private Label loggedInUserLabel;
+        private readonly GMapControl _gmap;
+        private readonly HttpClient _httpClient;
+        private readonly ComboBox _searchBox;
+        private readonly Label _loggedInUserLabel;
         
         public Map(User loggedInUser)
         {
@@ -34,75 +28,71 @@ namespace TerraVision
             var users = LoadUsers();
             var initUser = users.Find(u => u.Username == loggedInUser.Username);
             
-            httpClient = new HttpClient();
+            _httpClient = new HttpClient();
 
-            gmap = new GMapControl();
-            gmap.Dock = DockStyle.Fill;
-            Controls.Add(gmap);
+            _gmap = new GMapControl();
+            _gmap.Dock = DockStyle.Fill;
+            Controls.Add(_gmap);
 
-            container = new Panel();
+            var container = new Panel();
             container.Dock = DockStyle.Right;
             container.Padding = new Padding(10);
             container.Width = this.Width / 5;
             container.BackColor = Color.White;
             Controls.Add(container);
 
-            sidebar = new Panel();
+            var sidebar = new Panel();
             sidebar.Dock = DockStyle.Fill;
             sidebar.BackColor = Color.White;
             container.Controls.Add(sidebar);
             
-            Button logoutButton = new Button();
+            var logoutButton = new Button();
             logoutButton.Text = "Logout";
             logoutButton.Dock = DockStyle.Bottom;
             logoutButton.Click += LogoutButton_Click;
             sidebar.Controls.Add(logoutButton);
             
-            searchBox = new ComboBox();
-            searchBox.Dock = DockStyle.Top;
-            searchBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            searchBox.AutoCompleteSource = AutoCompleteSource.ListItems;
-            searchBox.KeyDown += SearchBox_KeyDown;
-            sidebar.Controls.Add(searchBox);
+            _searchBox = new ComboBox();
+            _searchBox.Dock = DockStyle.Top;
+            _searchBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            _searchBox.AutoCompleteSource = AutoCompleteSource.ListItems;
+            _searchBox.KeyDown += SearchBox_KeyDown;
+            sidebar.Controls.Add(_searchBox);
 
-            Label searchLabel = new Label();
+            var searchLabel = new Label();
             searchLabel.Text = "Search country by name:";
             searchLabel.Dock = DockStyle.Top;
             sidebar.Controls.Add(searchLabel);
             
-            loggedInUserLabel = new Label();
-            loggedInUserLabel.Text = $"Zalogowany jako: {loggedInUser.Username}";
-            loggedInUserLabel.Dock = DockStyle.Top;
-            sidebar.Controls.Add(loggedInUserLabel);
+            _loggedInUserLabel = new Label();
+            _loggedInUserLabel.Text = $"Zalogowany jako: {loggedInUser.Username}";
+            _loggedInUserLabel.Dock = DockStyle.Top;
+            sidebar.Controls.Add(_loggedInUserLabel);
             
-            gmap.MapProvider = GMapProviders.GoogleMap;
-            gmap.DragButton = MouseButtons.Left;
-            gmap.Position = new PointLatLng(51.5074, -0.1278); // London
-            gmap.MinZoom = 3;
-            gmap.MaxZoom = 5;
-            gmap.Zoom = 3;
-            gmap.AutoScroll = true;
+            _gmap.MapProvider = GMapProviders.GoogleMap;
+            _gmap.DragButton = MouseButtons.Left;
+            _gmap.Position = new PointLatLng(51.5074, -0.1278); // London
+            _gmap.MinZoom = 3;
+            _gmap.MaxZoom = 5;
+            _gmap.Zoom = 3;
+            _gmap.AutoScroll = true;
 
-            gmap.OnMapClick += async (latLng, mouseEventArgs) =>
+            _gmap.OnMapClick += async (latLng, mouseEventArgs) =>
             {
-                if (mouseEventArgs.Button == MouseButtons.Left)
-                {
-                    Cursor.Current = Cursors.WaitCursor;
-                    var country = await GetCountryInfoByItude(latLng.Lat, latLng.Lng);
-                    var countryInfoForm = new CountryInfo();
-                    countryInfoForm.ShowCountryInfo(country);
-                    countryInfoForm.ShowDialog();
-                    Cursor.Current = Cursors.Default;
-                }
+                if (mouseEventArgs.Button != MouseButtons.Left) return;
+                Cursor.Current = Cursors.WaitCursor;
+                var country = await GetCountryInfoByItude(latLng.Lat, latLng.Lng);
+                var countryInfoForm = new CountryInfo();
+                countryInfoForm.ShowCountryInfo(country);
+                countryInfoForm.ShowDialog();
+                Cursor.Current = Cursors.Default;
             };
-            
-            if (initUser.SearchHistory != null)
+
+            if (initUser.SearchHistory == null) return;
+            initUser.SearchHistory.Reverse();
+            foreach (var searchItem in initUser.SearchHistory)
             {
-                initUser.SearchHistory.Reverse();
-                foreach (var searchItem in initUser.SearchHistory)
-                {
-                    searchBox.Items.Add(searchItem);
-                }
+                _searchBox.Items.Add(searchItem);
             }
         }
         
@@ -114,29 +104,32 @@ namespace TerraVision
         }
         private async Task<Country> GetCountryInfoByItude(double lat, double lng)
         {
-            var countryInfoResponse = await httpClient.GetStringAsync($"https://api.bigdatacloud.net/data/reverse-geocode-client?latitude={lat}&longitude={lng}&localityLanguage=en");
+            var countryInfoResponse = await _httpClient.GetStringAsync($"https://api.bigdatacloud.net/data/reverse-geocode-client?latitude={lat}&longitude={lng}&localityLanguage=en");
             var countryInfoData = JObject.Parse(countryInfoResponse);
-            var countryCode = countryInfoData["countryCode"].ToString();
-            var countryTimezoneName = countryInfoData["localityInfo"]["informative"][1]["name"].ToString();
+            var countryCode = countryInfoData["countryCode"]?.ToString();
+            var countryTimezoneName = countryInfoData["localityInfo"]?["informative"]?[1]?["name"]?.ToString();
 
-            var allCountries = await httpClient.GetStringAsync("https://restcountries.com/v3.1/all");
+            var allCountries = await _httpClient.GetStringAsync("https://restcountries.com/v3.1/all");
             var countriesData = JArray.Parse(allCountries);
             var country = countriesData.SelectToken($"$[?(@.cca2 == '{countryCode}')]");
-            var countryCommonName = country["name"]["common"].ToString();
-            var countryOfficialName = country["name"]["official"].ToString();
-            var countryCapital = country["capital"][0].ToString();
-            var countryCurrencies = country["currencies"].ToString(); // key: { name, symbol }
-            var countryContinents = country["continents"][0].ToString();
-            var countrySubRegion = country["subregion"].ToString();
-            var countryLanguages = country["languages"].ToString(); // key: { name }
-            var countryPopulation = country["population"].ToString();
-            var countryTimezones = country["timezones"].ToString();
+            
+            if (country == null) return null;
+            
+            var countryCommonName = country["name"]?["common"]?.ToString();
+            var countryOfficialName = country["name"]?["official"]?.ToString();
+            var countryCapital = country["capital"]?[0]?.ToString();
+            var countryCurrencies = country["currencies"]?.ToString();
+            var countryContinents = country["continents"]?[0]?.ToString();
+            var countrySubRegion = country["subregion"]?.ToString();
+            var countryLanguages = country["languages"]?.ToString();
+            var countryPopulation = country["population"]?.ToString();
+            var countryTimezones = country["timezones"]?.ToString();
             var countryArea = country["area"].ToString();
             var countryFlag = country["flags"]["png"].ToString();
             var countryLat = Convert.ToDouble(country["latlng"][0]);
             var countryLng = Convert.ToDouble(country["latlng"][1]);
 
-            var countryWeatherResponse = await httpClient.GetStringAsync(
+            var countryWeatherResponse = await _httpClient.GetStringAsync(
                 $"https://api.open-meteo.com/v1/forecast?latitude={countryLat}&longitude={countryLng}&current=temperature_2m,wind_speed_10m");
             var countryWeatherData = JObject.Parse(countryWeatherResponse);
             var temperatureUnit = countryWeatherData["current_units"]["temperature_2m"].ToString();
@@ -171,53 +164,48 @@ namespace TerraVision
         
         private async void SearchBox_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (e.KeyCode != Keys.Enter) return;
+            var country = await SearchCountry(_searchBox.Text);
+            e.SuppressKeyPress = true;
+            Cursor.Current = Cursors.WaitCursor;
+
+            if (country == null)
             {
-                var country = await SearchCountry(searchBox.Text);
-                e.SuppressKeyPress = true;
-                Cursor.Current = Cursors.WaitCursor;
-
-                if (country == null)
-                {
-                    MessageBox.Show("Country not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Cursor.Current = Cursors.Default;
-                    return;
-                }
-
-                var countryInfoForm = new CountryInfo();
-                countryInfoForm.ShowCountryInfo(country);
-                countryInfoForm.ShowDialog();
+                MessageBox.Show("Country not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Cursor.Current = Cursors.Default;
+                return;
             }
+
+            var countryInfoForm = new CountryInfo();
+            countryInfoForm.ShowCountryInfo(country);
+            countryInfoForm.ShowDialog();
+            Cursor.Current = Cursors.Default;
         }
 
         private async Task<Country> SearchCountry(string countryName)
         {
-            var allCountries = await httpClient.GetStringAsync("https://restcountries.com/v3.1/all");
+            var allCountries = await _httpClient.GetStringAsync("https://restcountries.com/v3.1/all");
             var countriesData = JArray.Parse(allCountries);
             var country = countriesData.SelectToken($"$[?(@.name.common == '{countryName}')]");
             
-            if (country == null)
-            {
-                return null;
-            }
-            
-            var countryCommonName = country["name"]["common"].ToString();
-            var countryOfficialName = country["name"]["official"].ToString();
-            var countryCode = country["cca2"].ToString();
-            var countryCapital = country["capital"][0].ToString();
-            var countryCurrencies = country["currencies"].ToString(); // key: { name, symbol }
-            var countryContinents = country["continents"][0].ToString();
-            var countrySubRegion = country["subregion"].ToString();
-            var countryLanguages = country["languages"].ToString(); // key: { name }
-            var countryPopulation = country["population"].ToString();
-            var countryTimezones = country["timezones"].ToString();
-            var countryArea = country["area"].ToString();
-            var countryFlag = country["flags"]["png"].ToString();
+            if (country == null) return null;
+
+            var countryCommonName = country["name"]?["common"]?.ToString();
+            var countryOfficialName = country["name"]?["official"]?.ToString();
+            var countryCode = country["cca2"]?.ToString();
+            var countryCapital = country["capital"]?[0]?.ToString();
+            var countryCurrencies = country["currencies"]?.ToString();
+            var countryContinents = country["continents"]?[0]?.ToString();
+            var countrySubRegion = country["subregion"]?.ToString();
+            var countryLanguages = country["languages"]?.ToString();
+            var countryPopulation = country["population"]?.ToString();
+            var countryTimezones = country["timezones"]?.ToString();
+            var countryArea = country["area"]?.ToString();
+            var countryFlag = country["flags"]?["png"]?.ToString();
             var countryLat = Convert.ToDouble(country["latlng"][0]);
             var countryLng = Convert.ToDouble(country["latlng"][1]);
 
-            var countryWeatherResponse = await httpClient.GetStringAsync(
+            var countryWeatherResponse = await _httpClient.GetStringAsync(
                 $"https://api.open-meteo.com/v1/forecast?latitude={countryLat}&longitude={countryLng}&current=temperature_2m,wind_speed_10m");
             var countryWeatherData = JObject.Parse(countryWeatherResponse);
             var temperatureUnit = countryWeatherData["current_units"]["temperature_2m"].ToString();
@@ -248,7 +236,7 @@ namespace TerraVision
             };
             
             var users = LoadUsers();
-            var loggedInUser = users.Find(u => u.Username == loggedInUserLabel.Text.Split(':')[1].Trim());
+            var loggedInUser = users.Find(u => u.Username == _loggedInUserLabel.Text.Split(':')[1].Trim());
             
             if (loggedInUser.SearchHistory == null)
             {
@@ -264,40 +252,22 @@ namespace TerraVision
             SaveUsers(users);
             
             var users2 = LoadUsers();
-            var loggedInUser2 = users2.Find(u => u.Username == loggedInUserLabel.Text.Split(':')[1].Trim());
+            var loggedInUser2 = users2.Find(u => u.Username == _loggedInUserLabel.Text.Split(':')[1].Trim());
             
-            searchBox.Items.Clear();
+            _searchBox.Items.Clear();
                 
             if (loggedInUser2.SearchHistory != null)
             {
                 loggedInUser2.SearchHistory.Reverse();
                 foreach (var searchItem in loggedInUser2.SearchHistory)
                 {
-                    searchBox.Items.Add(searchItem);
+                    _searchBox.Items.Add(searchItem);
                 }
             }
             
             SaveUsers(users);
             
             return newCountry;
-        }
-        
-        private List<User> LoadUsers()
-        {
-            var usersPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "users.json");
-            if (File.Exists(usersPath))
-            {
-                var jsonData = File.ReadAllText(usersPath);
-                return JsonConvert.DeserializeObject<List<User>>(jsonData) ?? new List<User>();
-            }
-            return new List<User>();
-        }
-
-        private void SaveUsers(List<User> users)
-        {
-            var usersPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "users.json");
-            var serializedData = JsonConvert.SerializeObject(users);
-            File.WriteAllText(usersPath, serializedData);
         }
     }
 }
