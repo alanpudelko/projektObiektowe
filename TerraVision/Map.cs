@@ -71,7 +71,7 @@ namespace TerraVision
             
             _gmap.MapProvider = GMapProviders.GoogleMap;
             _gmap.DragButton = MouseButtons.Left;
-            _gmap.Position = new PointLatLng(51.5074, -0.1278); // London
+            _gmap.Position = new PointLatLng(51.5074, -0.1278); 
             _gmap.MinZoom = 3;
             _gmap.MaxZoom = 5;
             _gmap.Zoom = 3;

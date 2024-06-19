@@ -18,20 +18,14 @@ namespace TerraVision
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
-        private void DeleteAllUsersButton_Click(object sender, EventArgs e)
+        private void switchToLoginButton_Click_1(object sender, EventArgs e)
         {
-            if (File.Exists(DataPath))
-            {
-                File.Delete(DataPath);
-                MessageBox.Show("Wszyscy użytkownicy zostali usunięci.", "Usuwanie użytkowników", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Nie ma żadnych użytkowników do usunięcia.", "Usuwanie użytkowników", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            this.Hide();
+            var loginForm = new Login();
+            loginForm.Show();
         }
 
-        private void RegisterButton_Click(object sender, EventArgs e)
+        private void registerButton_Click_1(object sender, EventArgs e)
         {
             string username = usernameTextBox.Text;
             string password = passwordTextBox.Text;
@@ -75,18 +69,24 @@ namespace TerraVision
 
             File.WriteAllText(DataPath, serializedData);
 
-            MessageBox.Show("User registered successfully.", "Registration Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Rejestracja użytkownika przebiegła pomyślnie.", "Rejestracja pomyślna", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             var loginForm = new Login();
             loginForm.Show();
             this.Hide();
         }
 
-        private void SwitchToLoginButton_Click(object sender, EventArgs e)
+        private void deleteAllUsersButton_Click_1(object sender, EventArgs e)
         {
-            this.Hide();
-            var loginForm = new Login();
-            loginForm.Show();
+            if (File.Exists(DataPath))
+            {
+                File.Delete(DataPath);
+                MessageBox.Show("Wszyscy użytkownicy zostali usunięci.", "Usuwanie użytkowników", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Nie ma żadnych użytkowników do usunięcia.", "Usuwanie użytkowników", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

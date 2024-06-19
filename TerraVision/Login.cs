@@ -16,7 +16,15 @@ namespace TerraVision
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
-        private void LoginButton_Click(object sender, EventArgs e)
+        
+        private void switchToRegisterButton_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            var registerForm = new Register();
+            registerForm.Show();
+        }
+
+        private void loginButton_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -55,12 +63,6 @@ namespace TerraVision
                 MessageBox.Show($"Wystąpił błąd: {ex.Message}", "Błąd logowania", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void SwitchToRegisterButton_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            var registerForm = new Register();
-            registerForm.Show();
-        }
     }
+    
 }
