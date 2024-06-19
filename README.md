@@ -1,4 +1,8 @@
+<<<<<<< HEAD
  Problem z otwrciem projektu ?
+=======
+﻿Problem z otwrciem projektu ?
+>>>>>>> terravision
 1. Stwórz nowy projekt "Aplikacja Windows Forms", nazwa oraz reszta nie jest istotna.
 2. Platforma jest napisana w ".NET 8.0".
 3. Kliknij utwórz.
