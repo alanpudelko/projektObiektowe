@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using TerraVision.Models;
 using Newtonsoft.Json;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace TerraVision
 {
@@ -15,6 +17,7 @@ namespace TerraVision
             this.StartPosition = FormStartPosition.CenterScreen;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
+
         private void DeleteAllUsersButton_Click(object sender, EventArgs e)
         {
             if (File.Exists(DataPath))
@@ -27,30 +30,35 @@ namespace TerraVision
                 MessageBox.Show("Nie ma żadnych użytkowników do usunięcia.", "Usuwanie użytkowników", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
         private void RegisterButton_Click(object sender, EventArgs e)
         {
             string username = usernameTextBox.Text;
             string password = passwordTextBox.Text;
-            string hashedPassword = HashPassword(password);
-            var users = LoadUsers();
 
-            if (string.IsNullOrWhiteSpace(usernameTextBox.Text) || string.IsNullOrWhiteSpace(passwordTextBox.Text))
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
             {
                 MessageBox.Show("Pola nazwa użytkownika i hasło nie mogą być puste.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            
+
+            var users = LoadUsers();
+
             if (UserExists(users, username))
             {
                 MessageBox.Show("User already exists. Try another username.", "Registration Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
+            string salt;
+            string hashedPassword = HashAndSaltPassword(password, out salt);
+
             var user = new User
             {
                 Id = users.Count + 1,
                 Username = username,
                 Password = hashedPassword,
+                Salt = salt,
                 SearchHistory = new List<string>(),
                 HomeLocation = new List<string>(2),
                 Country = "Poland"
@@ -60,9 +68,9 @@ namespace TerraVision
 
             var serializedData = JsonConvert.SerializeObject(users);
 
-            if (!Directory.Exists(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data")))
+            if (!Directory.Exists(Path.GetDirectoryName(DataPath)))
             {
-                Directory.CreateDirectory(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data"));
+                Directory.CreateDirectory(Path.GetDirectoryName(DataPath));
             }
 
             File.WriteAllText(DataPath, serializedData);

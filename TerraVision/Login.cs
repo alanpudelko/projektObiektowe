@@ -1,6 +1,6 @@
 ﻿using System;
-using System.IO;
 using System.Collections.Generic;
+using System.IO;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 using TerraVision.Models;
@@ -18,35 +18,42 @@ namespace TerraVision
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            Cursor.Current = Cursors.WaitCursor;
-            var username = usernameTextBox.Text;
-            var password = passwordTextBox.Text;
-            var hashedPassword = HashPassword(password);
-            var users = LoadUsers();
-
-            if (!UserExists(users, username))
+            try
             {
-                Cursor.Current = Cursors.Default;
-                MessageBox.Show("User does not exist.", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+                string username = usernameTextBox.Text;
+                string password = passwordTextBox.Text;
 
-            var user = users.Find(u => u.Username == username);
-            if (user.Password != hashedPassword)
+                var users = LoadUsers();
+
+                if (!UserExists(users, username))
+                {
+                    MessageBox.Show("Użytkownik nie istnieje.", "Błąd logowania", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                var user = users.Find(u => u.Username == username);
+                string storedHashedPassword = user.Password;
+                string storedSalt = user.Salt;
+
+                if (VerifyPassword(password, storedHashedPassword, storedSalt))
+                {
+                    var loggedInUserPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "loggedInUser.json");
+                    var serializedData = JsonConvert.SerializeObject(user);
+                    File.WriteAllText(loggedInUserPath, serializedData);
+
+                    var mapForm = new Map(user);
+                    mapForm.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Niepoprawne hasło.", "Błąd logowania", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
             {
-                Cursor.Current = Cursors.Default;
-                MessageBox.Show("Incorrect password.", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                MessageBox.Show($"Wystąpił błąd: {ex.Message}", "Błąd logowania", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
-            var loggedInUserPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "loggedInUser.json");
-            var serializedData = JsonConvert.SerializeObject(user);
-            File.WriteAllText(loggedInUserPath, serializedData);
-
-            var mapForm = new Map(user);
-            mapForm.Show();
-            this.Hide();
-            Cursor.Current = Cursors.Default;
         }
 
         private void SwitchToRegisterButton_Click(object sender, EventArgs e)
