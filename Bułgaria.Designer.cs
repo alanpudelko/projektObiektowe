@@ -62,7 +62,7 @@
             InfoBułgaria1.Name = "InfoBułgaria1";
             InfoBułgaria1.Size = new Size(463, 67);
             InfoBułgaria1.TabIndex = 19;
-            InfoBułgaria1.TextChanged += InfoBułgaria1_TextChanged;
+            
             // 
             // InfoBułgaria
             // 
@@ -74,7 +74,7 @@
             InfoBułgaria.Name = "InfoBułgaria";
             InfoBułgaria.Size = new Size(463, 67);
             InfoBułgaria.TabIndex = 18;
-            InfoBułgaria.TextChanged += InfoBułgaria_TextChanged;
+            
             // 
             // label2
             // 

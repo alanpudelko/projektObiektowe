@@ -58,7 +58,7 @@
             Austria.TabIndex = 1;
             Austria.Text = "Austria";
             Austria.UseVisualStyleBackColor = false;
-            Austria.Click += Austria_Click;
+            
             // 
             // Back
             // 

@@ -10,18 +10,20 @@ using System.Windows.Forms;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Net.Http.Json;
+using EuroExplorer.Models;
 
 namespace EuroExplorer
 {
     public partial class Austria : Form
     {
-        public Austria()
+        private User loggedInUser;
+
+        public Austria(User user)
         {
             InitializeComponent();
+            loggedInUser = user;
             Task task = DisplayWeatherAsync();
         }
-
-
 
         public class WeatherData
         {
@@ -53,8 +55,6 @@ namespace EuroExplorer
                 MessageBox.Show($"Błąd pobierania danych pogodowych: {ex.Message}");
             }
         }
-
-
 
         static async Task<WeatherData?> GetWeatherData(string city, string countryCode, string apiKey)
         {
@@ -90,13 +90,10 @@ namespace EuroExplorer
                         string json = await response.Content.ReadAsStringAsync();
                         dynamic data = JObject.Parse(json);
 
-
                         int timezoneOffset = data.timezone;
-
 
                         TimeZoneInfo viennaTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Central European Standard Time");
 
-                        
                         DateTime viennaTime = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, viennaTimeZone);
 
                         InfoAustria.Text = $"Aktualna godzina w Wiedeń: {viennaTime.ToString("HH:mm:ss")}";
@@ -118,6 +115,7 @@ namespace EuroExplorer
             base.OnLoad(e);
             await GetCurrentTimeInViennaAsync();
         }
+
         private void OpisAustrii_TextChanged(object sender, EventArgs e)
         {
 
@@ -137,7 +135,6 @@ namespace EuroExplorer
         {
             this.Close();
 
-
             bool formAOpen = false;
             foreach (Form f in Application.OpenForms)
             {
@@ -152,12 +149,9 @@ namespace EuroExplorer
 
             if (!formAOpen)
             {
-                Form1 form1 = new Form1();
+                Form1 form1 = new Form1(loggedInUser);
                 form1.Show();
             }
         }
     }
 }
-        
-    
-

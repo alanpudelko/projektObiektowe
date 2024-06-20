@@ -9,17 +9,19 @@ using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using EuroExplorer.Models;
 
 namespace EuroExplorer
 {
     public partial class Luksemburg : Form
     {
-        public Luksemburg()
+        private User user;
+        public Luksemburg(User user)
         {
             InitializeComponent();
+            this.user = user;
             Task task = DisplayWeatherAsync();
         }
-
 
 
         public class WeatherData
@@ -131,7 +133,6 @@ namespace EuroExplorer
         {
             this.Close();
 
-
             bool formLOpen = false;
             foreach (Form f in Application.OpenForms)
             {
@@ -146,8 +147,8 @@ namespace EuroExplorer
 
             if (!formLOpen)
             {
-                FormL formL = new FormL();
-                formL.Show();
+                Form1 form1 = new Form1(user);
+                form1.Show();
             }
         }
     }

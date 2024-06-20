@@ -1,135 +1,140 @@
+using EuroExplorer.Models;
+using System;
+using System.Windows.Forms;
+
 namespace EuroExplorer
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        private User user;
+
+        public Form1(User user)
         {
             InitializeComponent();
-
+            this.user = user;
         }
 
         private void Title_Click(object sender, EventArgs e)
         {
-
+            // Obs³uga klikniêcia na tytu³, jeœli jest wymagana
         }
 
         private void CountryA_Click(object sender, EventArgs e)
         {
-            
-            FormA newfromA = new FormA();
-            newfromA.Show();
+            FormA newFormA = new FormA(user);
+            newFormA.Show();
             this.WindowState = FormWindowState.Minimized;
-            
         }
+
         private void CountryB_Click(object sender, EventArgs e)
         {
-
-            FormB newfromB = new FormB();
-            newfromB.Show();
+            FormB newFormB = new FormB(user);
+            newFormB.Show();
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void CountryC_Click_1(object sender, EventArgs e)
+        private void CountryC_Click(object sender, EventArgs e)
         {
-            FormC newfromC = new FormC();
-            newfromC.Show();
+            FormC newFormC = new FormC(user);
+            newFormC.Show();
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void CountryD_Click_1(object sender, EventArgs e)
+        private void CountryD_Click(object sender, EventArgs e)
         {
-            FormD newfromD = new FormD();
-            newfromD.Show();
+            FormD newFormD = new FormD(user);
+            newFormD.Show();
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void CountryE_Click_1(object sender, EventArgs e)
+        private void CountryE_Click(object sender, EventArgs e)
         {
-            FormE newfromE = new FormE();
-            newfromE.Show();
+            FormE newFormE = new FormE(user);
+            newFormE.Show();
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void CountryF_Click_1(object sender, EventArgs e)
+        private void CountryF_Click(object sender, EventArgs e)
         {
-            FormF newfromF = new FormF();
-            newfromF.Show();
+            FormF newFormF = new FormF(user);
+            newFormF.Show();
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void CountryG_Click_1(object sender, EventArgs e)
+        private void CountryG_Click(object sender, EventArgs e)
         {
-            FormG newfromG = new FormG();
-            newfromG.Show();
+            FormG newFormG = new FormG(user);
+            newFormG.Show();
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void CountryH_Click_1(object sender, EventArgs e)
+        private void CountryH_Click(object sender, EventArgs e)
         {
-            FormH newfromH = new FormH();
-            newfromH.Show();
+            FormH newFormH = new FormH(user);
+            newFormH.Show();
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void CountryI_Click_1(object sender, EventArgs e)
+        private void CountryI_Click(object sender, EventArgs e)
         {
-            FormI newfromI = new FormI();
-            newfromI.Show();
+            FormI newFormI = new FormI(user);
+            newFormI.Show();
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void CountryL_Click_1(object sender, EventArgs e)
+        private void CountryL_Click(object sender, EventArgs e)
         {
-            FormL newfromL = new FormL();
-            newfromL.Show();
-            this.WindowState = FormWindowState.Minimized;
-        }
-        private void Country£_Click_1(object sender, EventArgs e)
-        {
-            Form£ newfrom£ = new Form£();
-            newfrom£.Show();
+            FormL newFormL = new FormL(user);
+            newFormL.Show();
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void CountryM_Click_1(object sender, EventArgs e)
+        private void Country£_Click(object sender, EventArgs e)
         {
-            FormM newfromM = new FormM();
-            newfromM.Show();
+            Form£ newForm£ = new Form£(user);
+            newForm£.Show();
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void CountryN_Click_1(object sender, EventArgs e)
+        private void CountryM_Click(object sender, EventArgs e)
         {
-            FormN newfromN = new FormN();
-            newfromN.Show();
+            FormM newFormM = new FormM(user);
+            newFormM.Show();
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void CountryP_Click_1(object sender, EventArgs e)
+        private void CountryN_Click(object sender, EventArgs e)
         {
-            FormP newfromP = new FormP();
-            newfromP.Show();
+            FormN newFormN = new FormN(user);
+            newFormN.Show();
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void CountryR_Click_1(object sender, EventArgs e)
+        private void CountryP_Click(object sender, EventArgs e)
         {
-            FormR newfromR = new FormR();
-            newfromR.Show();
+            FormP newFormP = new FormP(user);
+            newFormP.Show();
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void CountryS_Click_1(object sender, EventArgs e)
+        private void CountryR_Click(object sender, EventArgs e)
         {
-            FormS newfromS = new FormS();
-            newfromS.Show();
+            FormR newFormR = new FormR(user);
+            newFormR.Show();
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void CountryW_Click_1(object sender, EventArgs e)
+        private void CountryS_Click(object sender, EventArgs e)
         {
-            FormW newfromW = new FormW();
-            newfromW.Show();
+            FormS newFormS = new FormS(user);
+            newFormS.Show();
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void CountryW_Click(object sender, EventArgs e)
+        {
+            FormW newFormW = new FormW(user);
+            newFormW.Show();
             this.WindowState = FormWindowState.Minimized;
         }
     }

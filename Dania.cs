@@ -9,14 +9,18 @@ using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using EuroExplorer.Models;
 
 namespace EuroExplorer
 {
     public partial class Dania : Form
     {
-        public Dania()
+        private User user;
+
+        public Dania(User user)
         {
             InitializeComponent();
+            this.user = user;
             Task task = DisplayWeatherAsync();
         }
 
@@ -131,7 +135,6 @@ namespace EuroExplorer
         {
             this.Close();
 
-
             bool formDOpen = false;
             foreach (Form f in Application.OpenForms)
             {
@@ -146,7 +149,7 @@ namespace EuroExplorer
 
             if (!formDOpen)
             {
-                Form1 form1 = new Form1();
+                Form1 form1 = new Form1(user);
                 form1.Show();
             }
         }

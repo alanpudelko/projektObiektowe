@@ -9,14 +9,17 @@ using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using EuroExplorer.Models;
 
 namespace EuroExplorer
 {
     public partial class Słowenia : Form
     {
-        public Słowenia()
+        private User user;
+        public Słowenia(User user)
         {
             InitializeComponent();
+            this.user = user;
             Task task = DisplayWeatherAsync();
         }
 
@@ -131,7 +134,6 @@ namespace EuroExplorer
         {
             this.Close();
 
-
             bool formSOpen = false;
             foreach (Form f in Application.OpenForms)
             {
@@ -146,8 +148,8 @@ namespace EuroExplorer
 
             if (!formSOpen)
             {
-                FormS formS = new FormS();
-                formS.Show();
+                Form1 form1 = new Form1(user);
+                form1.Show();
             }
         }
     }

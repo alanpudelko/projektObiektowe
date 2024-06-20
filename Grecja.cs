@@ -9,14 +9,17 @@ using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using EuroExplorer.Models;
 
 namespace EuroExplorer
 {
     public partial class Grecja : Form
     {
-        public Grecja()
+        private User user;
+        public Grecja(User user)
         {
             InitializeComponent();
+            this.user = user;
             Task task = DisplayWeatherAsync();
         }
 
@@ -136,7 +139,6 @@ namespace EuroExplorer
         {
             this.Close();
 
-
             bool formGOpen = false;
             foreach (Form f in Application.OpenForms)
             {
@@ -151,8 +153,8 @@ namespace EuroExplorer
 
             if (!formGOpen)
             {
-                FormG formG = new FormG();
-                formG.Show();
+                Form1 form1 = new Form1(user);
+                form1.Show();
             }
         }
     }

@@ -45,7 +45,7 @@
             label1.Size = new Size(556, 86);
             label1.TabIndex = 3;
             label1.Text = "Wybierz Państwo";
-            label1.Click += label1_Click;
+            
             // 
             // Irlandia
             // 

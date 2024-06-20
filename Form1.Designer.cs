@@ -185,7 +185,7 @@
             CountryC.TabIndex = 6;
             CountryC.Text = "C :";
             CountryC.UseVisualStyleBackColor = false;
-            CountryC.Click += CountryC_Click_1;
+            CountryC.Click += CountryC_Click;
             // 
             // pictureBox4
             // 
@@ -230,7 +230,7 @@
             CountryD.TabIndex = 10;
             CountryD.Text = "D :";
             CountryD.UseVisualStyleBackColor = false;
-            CountryD.Click += CountryD_Click_1;
+            CountryD.Click += CountryD_Click;
             // 
             // pictureBox7
             // 
@@ -253,7 +253,7 @@
             CountryE.TabIndex = 12;
             CountryE.Text = "E :";
             CountryE.UseVisualStyleBackColor = false;
-            CountryE.Click += CountryE_Click_1;
+            CountryE.Click += CountryE_Click;
             // 
             // pictureBox8
             // 
@@ -276,7 +276,7 @@
             CountryF.TabIndex = 14;
             CountryF.Text = "F :";
             CountryF.UseVisualStyleBackColor = false;
-            CountryF.Click += CountryF_Click_1;
+            CountryF.Click += CountryF_Click;
             // 
             // pictureBox9
             // 
@@ -310,7 +310,7 @@
             CountryG.TabIndex = 17;
             CountryG.Text = "G :";
             CountryG.UseVisualStyleBackColor = false;
-            CountryG.Click += CountryG_Click_1;
+            CountryG.Click += CountryG_Click;
             // 
             // pictureBox11
             // 
@@ -333,7 +333,7 @@
             CountryH.TabIndex = 19;
             CountryH.Text = "H :";
             CountryH.UseVisualStyleBackColor = false;
-            CountryH.Click += CountryH_Click_1;
+            CountryH.Click += CountryH_Click;
             // 
             // pictureBox12
             // 
@@ -367,7 +367,7 @@
             CountryI.TabIndex = 22;
             CountryI.Text = "I :";
             CountryI.UseVisualStyleBackColor = false;
-            CountryI.Click += CountryI_Click_1;
+            CountryI.Click += CountryI_Click;
             // 
             // pictureBox14
             // 
@@ -390,7 +390,7 @@
             CountryL.TabIndex = 24;
             CountryL.Text = "L :";
             CountryL.UseVisualStyleBackColor = false;
-            CountryL.Click += CountryL_Click_1;
+            CountryL.Click += CountryL_Click;
             // 
             // pictureBox15
             // 
@@ -424,7 +424,7 @@
             CountryŁ.TabIndex = 27;
             CountryŁ.Text = "Ł :";
             CountryŁ.UseVisualStyleBackColor = false;
-            CountryŁ.Click += CountryŁ_Click_1;
+            CountryŁ.Click += CountryŁ_Click;
             // 
             // pictureBox17
             // 
@@ -447,7 +447,7 @@
             CountryM.TabIndex = 29;
             CountryM.Text = "M :";
             CountryM.UseVisualStyleBackColor = false;
-            CountryM.Click += CountryM_Click_1;
+            CountryM.Click += CountryM_Click;
             // 
             // CountryN
             // 
@@ -459,7 +459,7 @@
             CountryN.TabIndex = 30;
             CountryN.Text = "N :";
             CountryN.UseVisualStyleBackColor = false;
-            CountryN.Click += CountryN_Click_1;
+            CountryN.Click += CountryN_Click;
             // 
             // CountryP
             // 
@@ -471,7 +471,7 @@
             CountryP.TabIndex = 31;
             CountryP.Text = "P :";
             CountryP.UseVisualStyleBackColor = false;
-            CountryP.Click += CountryP_Click_1;
+            CountryP.Click += CountryP_Click;
             // 
             // CountryR
             // 
@@ -483,7 +483,7 @@
             CountryR.TabIndex = 32;
             CountryR.Text = "R :";
             CountryR.UseVisualStyleBackColor = false;
-            CountryR.Click += CountryR_Click_1;
+            CountryR.Click += CountryR_Click;
             // 
             // CountryS
             // 
@@ -495,7 +495,7 @@
             CountryS.TabIndex = 33;
             CountryS.Text = "S :";
             CountryS.UseVisualStyleBackColor = false;
-            CountryS.Click += CountryS_Click_1;
+            CountryS.Click += CountryS_Click;
             // 
             // CountryW
             // 
@@ -507,7 +507,7 @@
             CountryW.TabIndex = 34;
             CountryW.Text = "W :";
             CountryW.UseVisualStyleBackColor = false;
-            CountryW.Click += CountryW_Click_1;
+            CountryW.Click += CountryW_Click;
             // 
             // pictureBox18
             // 

@@ -10,18 +10,20 @@ using System.Windows.Forms;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Net.Http.Json;
+using EuroExplorer.Models;
 
 namespace EuroExplorer
 {
     public partial class Belgia : Form
     {
-        public Belgia()
+        private User user; 
+
+        public Belgia(User user)
         {
             InitializeComponent();
+            this.user = user;
             Task task = DisplayWeatherAsync();
         }
-
-
 
         public class WeatherData
         {
@@ -53,8 +55,6 @@ namespace EuroExplorer
                 MessageBox.Show($"Błąd pobierania danych pogodowych: {ex.Message}");
             }
         }
-
-
 
         static async Task<WeatherData?> GetWeatherData(string city, string countryCode, string apiKey)
         {
@@ -118,21 +118,9 @@ namespace EuroExplorer
             await GetCurrentTimeInBelgiumAsync();
         }
 
-
-        private void InfoBelgia_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void InfoBelgia1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void Back_Click(object sender, EventArgs e)
         {
             this.Close();
-
 
             bool formBOpen = false;
             foreach (Form f in Application.OpenForms)
@@ -148,7 +136,7 @@ namespace EuroExplorer
 
             if (!formBOpen)
             {
-                Form1 form1 = new Form1();
+                Form1 form1 = new Form1(user); 
                 form1.Show();
             }
         }

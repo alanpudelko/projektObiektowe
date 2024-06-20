@@ -1,20 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using EuroExplorer.Models;
 
 namespace EuroExplorer
 {
     public partial class FormS : Form
     {
-        public FormS()
+        private User user;
+
+        public FormS(User user)
         {
             InitializeComponent();
+            this.user = user;
         }
 
         private void FormS_Load(object sender, EventArgs e)
@@ -24,30 +21,28 @@ namespace EuroExplorer
 
         private void Słowacja_Click(object sender, EventArgs e)
         {
-            Słowacja F20 = new Słowacja();
+            Słowacja F20 = new Słowacja(user);
             F20.Show();
             this.WindowState = FormWindowState.Minimized;
         }
 
         private void Słowenia_Click(object sender, EventArgs e)
         {
-            Słowenia F21 = new Słowenia();
+            Słowenia F21 = new Słowenia(user);
             F21.Show();
             this.WindowState = FormWindowState.Minimized;
         }
 
         private void Szwecja_Click(object sender, EventArgs e)
         {
-            Szwecja F22 = new Szwecja();
+            Szwecja F22 = new Szwecja(user);
             F22.Show();
             this.WindowState = FormWindowState.Minimized;
         }
 
         private void Back_Click(object sender, EventArgs e)
         {
-
             this.Close();
-
 
             bool form1Open = false;
             foreach (Form f in Application.OpenForms)
@@ -63,7 +58,7 @@ namespace EuroExplorer
 
             if (!form1Open)
             {
-                Form1 form1 = new Form1();
+                Form1 form1 = new Form1(user);
                 form1.Show();
             }
         }

@@ -1,34 +1,29 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using EuroExplorer.Models;
 
 namespace EuroExplorer
 {
     public partial class FormŁ : Form
     {
-        public FormŁ()
+        private User user;
+
+        public FormŁ(User user)
         {
             InitializeComponent();
+            this.user = user;
         }
 
         private void Łotwa_Click(object sender, EventArgs e)
         {
-            Łotwa F15 = new Łotwa();
+            Łotwa F15 = new Łotwa(user);
             F15.Show();
             this.WindowState = FormWindowState.Minimized;
         }
 
         private void Back_Click(object sender, EventArgs e)
         {
-
             this.Close();
-
 
             bool form1Open = false;
             foreach (Form f in Application.OpenForms)
@@ -44,7 +39,7 @@ namespace EuroExplorer
 
             if (!form1Open)
             {
-                Form1 form1 = new Form1();
+                Form1 form1 = new Form1(user);
                 form1.Show();
             }
         }

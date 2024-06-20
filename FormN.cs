@@ -7,21 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using EuroExplorer.Models;
 
 namespace EuroExplorer
 {
     public partial class FormN : Form
     {
-        public FormN()
+        private EuroExplorer.Models.User loggedInUser;
+
+        public FormN(EuroExplorer.Models.User user)
         {
             InitializeComponent();
+            this.loggedInUser = user;
         }
 
         private void Back_Click(object sender, EventArgs e)
         {
-
             this.Close();
-
 
             bool form1Open = false;
             foreach (Form f in Application.OpenForms)
@@ -37,14 +39,14 @@ namespace EuroExplorer
 
             if (!form1Open)
             {
-                Form1 form1 = new Form1();
+                Form1 form1 = new Form1(loggedInUser);
                 form1.Show();
             }
         }
 
         private void Niemcy_Click(object sender, EventArgs e)
         {
-            Niemcy F30=new Niemcy();
+            Niemcy F30 = new Niemcy(loggedInUser);
             F30.Show();
             this.WindowState = FormWindowState.Minimized;
         }

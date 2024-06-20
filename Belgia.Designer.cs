@@ -50,7 +50,7 @@
             InfoBelgia1.Name = "InfoBelgia1";
             InfoBelgia1.Size = new Size(463, 67);
             InfoBelgia1.TabIndex = 12;
-            InfoBelgia1.TextChanged += InfoBelgia1_TextChanged;
+            
             // 
             // InfoBelgia
             // 
@@ -62,7 +62,7 @@
             InfoBelgia.Name = "InfoBelgia";
             InfoBelgia.Size = new Size(463, 67);
             InfoBelgia.TabIndex = 11;
-            InfoBelgia.TextChanged += InfoBelgia_TextChanged;
+            
             // 
             // label2
             // 

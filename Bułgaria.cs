@@ -1,26 +1,23 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Net.Http.Json;
-using System.Text;
+using System.Net.Http;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using EuroExplorer.Models;
 
 namespace EuroExplorer
 {
     public partial class Bułgaria : Form
     {
-        public Bułgaria()
+        private User user;
+
+        public Bułgaria(User user)
         {
             InitializeComponent();
+            this.user = user;
             Task task = DisplayWeatherAsync();
         }
-
-
 
         public class WeatherData
         {
@@ -53,8 +50,6 @@ namespace EuroExplorer
             }
         }
 
-
-
         static async Task<WeatherData?> GetWeatherData(string city, string countryCode, string apiKey)
         {
             using (var httpClient = new HttpClient())
@@ -63,7 +58,10 @@ namespace EuroExplorer
                 {
                     var response = await httpClient.GetAsync($"http://api.openweathermap.org/data/2.5/weather?q={city},{countryCode}&appid={apiKey}&units=metric");
                     response.EnsureSuccessStatusCode();
-                    var data = await response.Content.ReadFromJsonAsync<WeatherData?>();
+
+                    string json = await response.Content.ReadAsStringAsync();
+                    var data = JsonConvert.DeserializeObject<WeatherData?>(json);
+
                     return data;
                 }
                 catch (Exception ex)
@@ -117,21 +115,9 @@ namespace EuroExplorer
             await GetCurrentTimeInBułgariaAsync();
         }
 
-
-        private void InfoBułgaria_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void InfoBułgaria1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void Back_Click(object sender, EventArgs e)
         {
             this.Close();
-
 
             bool formBOpen = false;
             foreach (Form f in Application.OpenForms)
@@ -147,7 +133,7 @@ namespace EuroExplorer
 
             if (!formBOpen)
             {
-                Form1 form1 = new Form1();
+                Form1 form1 = new Form1(user);
                 form1.Show();
             }
         }

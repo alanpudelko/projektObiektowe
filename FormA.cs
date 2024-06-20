@@ -12,24 +12,29 @@ namespace EuroExplorer
 {
     public partial class FormA : Form
     {
-        public FormA()
+        private EuroExplorer.Models.User currentUser; 
+
+        public FormA(EuroExplorer.Models.User user)
         {
             InitializeComponent();
+
+           
+            currentUser = user;
         }
 
-        private void Austria_Click(object sender, EventArgs e)
+        private void SomeMethodThatUsesUser()
         {
-            Austria F1 = new Austria();
-            F1.Show();
+            
+            Form1 form1 = new Form1(currentUser);
+            form1.Show();
             this.WindowState = FormWindowState.Minimized;
         }
 
         private void Back_Click(object sender, EventArgs e)
         {
-
             this.Close();
 
-
+            
             bool form1Open = false;
             foreach (Form f in Application.OpenForms)
             {
@@ -42,9 +47,10 @@ namespace EuroExplorer
                 }
             }
 
+           
             if (!form1Open)
             {
-                Form1 form1 = new Form1();
+                Form1 form1 = new Form1(currentUser); 
                 form1.Show();
             }
         }
