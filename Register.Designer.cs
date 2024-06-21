@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Register));
             usernameLabel = new Label();
             passwordLabel = new Label();
             usernameTextBox = new TextBox();
@@ -40,6 +41,8 @@
             // usernameLabel
             // 
             usernameLabel.AutoSize = true;
+            usernameLabel.BackColor = Color.Transparent;
+            usernameLabel.ForeColor = SystemColors.Menu;
             usernameLabel.Location = new Point(59, 46);
             usernameLabel.Name = "usernameLabel";
             usernameLabel.Size = new Size(48, 15);
@@ -49,6 +52,8 @@
             // passwordLabel
             // 
             passwordLabel.AutoSize = true;
+            passwordLabel.BackColor = Color.Transparent;
+            passwordLabel.ForeColor = SystemColors.Menu;
             passwordLabel.Location = new Point(59, 98);
             passwordLabel.Name = "passwordLabel";
             passwordLabel.Size = new Size(43, 15);
@@ -105,6 +110,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
             Controls.Add(deleteAllUsersButton);
             Controls.Add(registerButton);
@@ -113,6 +120,7 @@
             Controls.Add(usernameTextBox);
             Controls.Add(passwordLabel);
             Controls.Add(usernameLabel);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Register";
             Text = "Register";
             Load += Register_Load;

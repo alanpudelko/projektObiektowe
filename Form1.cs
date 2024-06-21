@@ -1,4 +1,7 @@
 using EuroExplorer.Models;
+using GMap.NET.MapProviders;
+using GMap.NET.WindowsForms;
+using GMap.NET;
 using System;
 using System.Windows.Forms;
 
@@ -8,11 +11,16 @@ namespace EuroExplorer
     {
         private User user;
 
+
         public Form1(User user)
         {
             InitializeComponent();
+            
             this.user = user;
         }
+       
+        
+
 
         private void Title_Click(object sender, EventArgs e)
         {

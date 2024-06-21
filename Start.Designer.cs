@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Start));
             loginButton = new Button();
             registerButton = new Button();
             SuspendLayout();
             // 
             // loginButton
             // 
-            loginButton.Location = new Point(261, 152);
+            loginButton.Location = new Point(324, 134);
             loginButton.Name = "loginButton";
             loginButton.Size = new Size(115, 42);
             loginButton.TabIndex = 0;
@@ -44,7 +45,7 @@
             // 
             // registerButton
             // 
-            registerButton.Location = new Point(261, 263);
+            registerButton.Location = new Point(324, 245);
             registerButton.Name = "registerButton";
             registerButton.Size = new Size(115, 42);
             registerButton.TabIndex = 1;
@@ -56,6 +57,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
             Controls.Add(registerButton);
             Controls.Add(loginButton);
