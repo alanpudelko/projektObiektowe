@@ -3,6 +3,7 @@
 2. [Instalacja](#instalacja)
 3. [Licencja](#licencja)
 4. [Kontakt](#kontakt)
+5. [Kolaboracja](#kolaboracja)
 
 
 # Nazwa oraz opis projektu
