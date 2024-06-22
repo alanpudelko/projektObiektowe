@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EuroExplorer.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,22 +10,23 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EuroExplorer
+
 {
     public partial class FormA : Form
     {
-        private EuroExplorer.Models.User currentUser; 
+       
+        private User loggedInUser;
+        private User currentUser;
 
-        public FormA(EuroExplorer.Models.User user)
+        public FormA(User user)
         {
             InitializeComponent();
-
-           
-            currentUser = user;
+            this.loggedInUser = user;
         }
 
         private void SomeMethodThatUsesUser()
         {
-            
+
             Form1 form1 = new Form1(currentUser);
             form1.Show();
             this.WindowState = FormWindowState.Minimized;
@@ -34,7 +36,7 @@ namespace EuroExplorer
         {
             this.Close();
 
-            
+
             bool form1Open = false;
             foreach (Form f in Application.OpenForms)
             {
@@ -47,12 +49,19 @@ namespace EuroExplorer
                 }
             }
 
-           
+
             if (!form1Open)
             {
-                Form1 form1 = new Form1(currentUser); 
+                Form1 form1 = new Form1(currentUser);
                 form1.Show();
             }
+        }
+
+        private void Austria_Click(object sender, EventArgs e)
+        {
+            Austria newForm2 = new Austria(loggedInUser);
+            newForm2.Show();
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
