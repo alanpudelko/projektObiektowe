@@ -1,3 +1,10 @@
+# Spis treści
+1. [Nazwa oraz opis projektu](#nazwa oraz opis projektu)
+2. [Instalacja](#instalacja)
+3. [Licencja](#licencja)
+4. [Kontakt](#kontakt)
+
+
 # Nazwa oraz opis projektu
 EuroExplorer to zaawansowana aplikacja mobilna stworzona z myślą o odkrywaniu i poznawaniu różnorodnych informacji na temat krajów Unii Europejskiej. Główne funkcje i cechy aplikacji obejmują:
 
@@ -14,15 +21,6 @@ EuroExplorer to zaawansowana aplikacja mobilna stworzona z myślą o odkrywaniu 
 6. Edukacyjne narzędzie: EuroExplorer może być również wykorzystywany jako narzędzie edukacyjne, zarówno dla studentów, jak i dla osób chcących poszerzyć swoją wiedzę na temat Unii Europejskiej i jej członków.
 
 Dzięki EuroExplorer użytkownicy mogą poznać bogactwo różnorodności kulturowej, geograficznej i historycznej Unii Europejskiej, co czyni tę aplikację nieocenionym źródłem informacji dla podróżników, studentów, dziennikarzy oraz wszystkich zainteresowanych tym dynamicznym regionem świata.
-
-
-
-
-# Spis treści
-1. [Nazwa oraz opis projektu](#nazwa oraz opis projektu)
-2. [Instalacja](#instalacja)
-3. [Licencja](#licencja)
-4. [Kontakt](#kontakt)
   
   # Instalacja
     Problem z otwrciem projektu ?
