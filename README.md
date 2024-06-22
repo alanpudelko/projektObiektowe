@@ -19,9 +19,10 @@ Dzięki EuroExplorer użytkownicy mogą poznać bogactwo różnorodności kultur
 
 
 # Spis treści
-1. [Nazwa oraz opis projektu](#Nazwa oraz opis projektu)
+1. [Nazwa oraz opis projektu](#nazwa oraz opis projektu)
 2. [Instalacja](#instalacja)
 3. [Licencja](#licencja)
+4. [Kontakt](#kontakt)
   
   # Instalacja
     Problem z otwrciem projektu ?
