@@ -1,5 +1,5 @@
 # Spis treści
-1. [Nazwa oraz opis projektu](#nazwa oraz opis projektu)
+1. [Nazwa oraz opis projektu](#nazwa-oraz-opis-projektu)
 2. [Instalacja](#instalacja)
 3. [Licencja](#licencja)
 4. [Kontakt](#kontakt)
