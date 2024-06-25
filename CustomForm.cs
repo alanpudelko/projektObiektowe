@@ -31,9 +31,9 @@ namespace EuroExplorer
         protected string GenerateSalt()
         {
             byte[] saltBytes = new byte[32];
-            using (var rngCryptoServiceProvider = new RNGCryptoServiceProvider())
+            using (RandomNumberGenerator rng = RandomNumberGenerator.Create())
             {
-                rngCryptoServiceProvider.GetBytes(saltBytes);
+                rng.GetBytes(saltBytes);
             }
             return Convert.ToBase64String(saltBytes);
         }

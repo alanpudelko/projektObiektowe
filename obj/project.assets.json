@@ -41,18 +41,6 @@
           "buildTransitive/netcoreapp3.0/EntityFramework.targets": {}
         }
       },
-      "GMap.Net/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "AjaxMin": "5.14.5506.26202"
-        },
-        "compile": {
-          "lib/Gmap.net.dll": {}
-        },
-        "runtime": {
-          "lib/Gmap.net.dll": {}
-        }
-      },
       "GMap.NET.Core/2.1.7": {
         "type": "package",
         "dependencies": {
@@ -70,17 +58,6 @@
           "lib/net6.0/GMap.NET.Core.dll": {
             "related": ".runtimeconfig.json"
           }
-        }
-      },
-      "GMap.NET.WindowsForms/1.7.5": {
-        "type": "package",
-        "compile": {
-          "lib/net40/GMap.NET.Core.dll": {},
-          "lib/net40/GMap.NET.WindowsForms.dll": {}
-        },
-        "runtime": {
-          "lib/net40/GMap.NET.Core.dll": {},
-          "lib/net40/GMap.NET.WindowsForms.dll": {}
         }
       },
       "GMap.NET.WinForms/2.1.7": {
@@ -554,19 +531,6 @@
         "tools/netcoreapp3.0/any/ef6.runtimeconfig.json"
       ]
     },
-    "GMap.Net/1.0.1": {
-      "sha512": "gzWEuTCzVPMxUsjhhHEqJ2jPOVFolHbBEm7qNQrI3hATIgT1+91tkNKA7rBwqB0YI9eetlI0SqOtj73uDpWacw==",
-      "type": "package",
-      "path": "gmap.net/1.0.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "gmap.net.1.0.1.nupkg.sha512",
-        "gmap.net.nuspec",
-        "lib/Gmap.net.dll",
-        "lib/Gmap.net.pdb"
-      ]
-    },
     "GMap.NET.Core/2.1.7": {
       "sha512": "exjxXgx9pNR2eAihmvTzjEB7YWdHvTXx5O0T3ABiewPXIWcTV3MMGdjrV7NH0IOKeViUWeI4lQvqVziW6T013w==",
       "type": "package",
@@ -593,21 +557,6 @@
         "lib/netcoreapp3.1/GMap.NET.Core.runtimeconfig.json",
         "lib/netstandard2.0/GMap.NET.Core.dll",
         "lib/netstandard2.1/GMap.NET.Core.dll"
-      ]
-    },
-    "GMap.NET.WindowsForms/1.7.5": {
-      "sha512": "VA2836bCMgIAhcvpQIJpmDJrQFm+nnH8AiqKzGqvMAoamO+UqAoNy6b+YPKNAqS1+2RRAcq12nrC582tUcb90A==",
-      "type": "package",
-      "path": "gmap.net.windowsforms/1.7.5",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "gmap.net.windowsforms.1.7.5.nupkg.sha512",
-        "gmap.net.windowsforms.nuspec",
-        "lib/net20/GMap.NET.Core.dll",
-        "lib/net20/GMap.NET.WindowsForms.dll",
-        "lib/net40/GMap.NET.Core.dll",
-        "lib/net40/GMap.NET.WindowsForms.dll"
       ]
     },
     "GMap.NET.WinForms/2.1.7": {
@@ -1429,10 +1378,8 @@
   "projectFileDependencyGroups": {
     "net8.0-windows7.0": [
       "AjaxMin >= 5.14.5506.26202",
-      "GMap.NET >= 1.0.1",
       "GMap.NET.Core >= 2.1.7",
       "GMap.NET.WinForms >= 2.1.7",
-      "GMap.NET.WindowsForms >= 1.7.5",
       "Newtonsoft.Json >= 13.0.3"
     ]
   },
@@ -1443,11 +1390,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rafal\\Source\\Repos\\projektObiektowe13\\EuroExplorer.csproj",
+      "projectUniqueName": "C:\\Users\\rafal\\source\\repos\\projektObiektowe13\\EuroExplorer.csproj",
       "projectName": "EuroExplorer",
-      "projectPath": "C:\\Users\\rafal\\Source\\Repos\\projektObiektowe13\\EuroExplorer.csproj",
+      "projectPath": "C:\\Users\\rafal\\source\\repos\\projektObiektowe13\\EuroExplorer.csproj",
       "packagesPath": "C:\\Users\\rafal\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rafal\\Source\\Repos\\projektObiektowe13\\obj\\",
+      "outputPath": "C:\\Users\\rafal\\source\\repos\\projektObiektowe13\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1490,10 +1437,6 @@
             "target": "Package",
             "version": "[5.14.5506.26202, )"
           },
-          "GMap.NET": {
-            "target": "Package",
-            "version": "[1.0.1, )"
-          },
           "GMap.NET.Core": {
             "target": "Package",
             "version": "[2.1.7, )"
@@ -1501,10 +1444,6 @@
           "GMap.NET.WinForms": {
             "target": "Package",
             "version": "[2.1.7, )"
-          },
-          "GMap.NET.WindowsForms": {
-            "target": "Package",
-            "version": "[1.7.5, )"
           },
           "Newtonsoft.Json": {
             "target": "Package",
@@ -1541,26 +1480,6 @@
       "warningLevel": 1,
       "message": "Pakiet „AjaxMin 5.14.5506.26202” został przywrócony przy użyciu elementu „.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1” zamiast platformy docelowej projektu „net8.0-windows7.0”. Ten pakiet może nie być w pełni kompatybilny z Twoim projektem.",
       "libraryId": "AjaxMin",
-      "targetGraphs": [
-        "net8.0-windows7.0"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Pakiet „GMap.Net 1.0.1” został przywrócony przy użyciu elementu „.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1” zamiast platformy docelowej projektu „net8.0-windows7.0”. Ten pakiet może nie być w pełni kompatybilny z Twoim projektem.",
-      "libraryId": "GMap.Net",
-      "targetGraphs": [
-        "net8.0-windows7.0"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Pakiet „GMap.NET.WindowsForms 1.7.5” został przywrócony przy użyciu elementu „.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1” zamiast platformy docelowej projektu „net8.0-windows7.0”. Ten pakiet może nie być w pełni kompatybilny z Twoim projektem.",
-      "libraryId": "GMap.NET.WindowsForms",
       "targetGraphs": [
         "net8.0-windows7.0"
       ]

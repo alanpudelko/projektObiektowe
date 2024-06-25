@@ -29,7 +29,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             Title = new Label();
             CountryA = new Button();
@@ -40,7 +39,6 @@
             CountryC = new Button();
             pictureBox4 = new PictureBox();
             pictureBox5 = new PictureBox();
-            
             CountryD = new Button();
             pictureBox7 = new PictureBox();
             CountryE = new Button();
@@ -82,7 +80,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
@@ -119,7 +116,6 @@
             Title.Size = new Size(1024, 65);
             Title.TabIndex = 0;
             Title.Text = "Wybierz interesujące cię państwo po literze";
-            
             // 
             // CountryA
             // 
@@ -212,10 +208,6 @@
             pictureBox5.TabIndex = 8;
             pictureBox5.TabStop = false;
             // 
-            // pictureBox6
-            // 
-            
-            
             // CountryD
             // 
             CountryD.AutoSizeMode = AutoSizeMode.GrowAndShrink;
@@ -623,7 +615,7 @@
             gMapControl1.GrayScaleMode = false;
             gMapControl1.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             gMapControl1.LevelsKeepInMemory = 5;
-            gMapControl1.Location = new Point(972, 94);
+            gMapControl1.Location = new Point(851, 83);
             gMapControl1.MarkersEnabled = true;
             gMapControl1.MaxZoom = 2;
             gMapControl1.MinZoom = 2;
@@ -637,9 +629,10 @@
             gMapControl1.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             gMapControl1.SelectedAreaFillColor = Color.FromArgb(33, 65, 105, 225);
             gMapControl1.ShowTileGridLines = false;
-            gMapControl1.Size = new Size(843, 631);
+            gMapControl1.Size = new Size(990, 642);
             gMapControl1.TabIndex = 46;
             gMapControl1.Zoom = 0D;
+            gMapControl1.Load += gMapControl1_Load;
             // 
             // Form1
             // 
@@ -685,7 +678,6 @@
             Controls.Add(CountryE);
             Controls.Add(pictureBox7);
             Controls.Add(CountryD);
-            Controls.Add(pictureBox6);
             Controls.Add(pictureBox5);
             Controls.Add(pictureBox4);
             Controls.Add(CountryC);
@@ -703,7 +695,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
@@ -739,7 +730,6 @@
         private Button CountryC;
         private PictureBox pictureBox4;
         private PictureBox pictureBox5;
-        private PictureBox pictureBox6;
         private Button CountryD;
         private PictureBox pictureBox7;
         private Button CountryE;

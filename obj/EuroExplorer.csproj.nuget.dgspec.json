@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rafal\\Source\\Repos\\projektObiektowe13\\EuroExplorer.csproj": {}
+    "C:\\Users\\rafal\\source\\repos\\projektObiektowe13\\EuroExplorer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rafal\\Source\\Repos\\projektObiektowe13\\EuroExplorer.csproj": {
+    "C:\\Users\\rafal\\source\\repos\\projektObiektowe13\\EuroExplorer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rafal\\Source\\Repos\\projektObiektowe13\\EuroExplorer.csproj",
+        "projectUniqueName": "C:\\Users\\rafal\\source\\repos\\projektObiektowe13\\EuroExplorer.csproj",
         "projectName": "EuroExplorer",
-        "projectPath": "C:\\Users\\rafal\\Source\\Repos\\projektObiektowe13\\EuroExplorer.csproj",
+        "projectPath": "C:\\Users\\rafal\\source\\repos\\projektObiektowe13\\EuroExplorer.csproj",
         "packagesPath": "C:\\Users\\rafal\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rafal\\Source\\Repos\\projektObiektowe13\\obj\\",
+        "outputPath": "C:\\Users\\rafal\\source\\repos\\projektObiektowe13\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -54,10 +54,6 @@
               "target": "Package",
               "version": "[5.14.5506.26202, )"
             },
-            "GMap.NET": {
-              "target": "Package",
-              "version": "[1.0.1, )"
-            },
             "GMap.NET.Core": {
               "target": "Package",
               "version": "[2.1.7, )"
@@ -65,10 +61,6 @@
             "GMap.NET.WinForms": {
               "target": "Package",
               "version": "[2.1.7, )"
-            },
-            "GMap.NET.WindowsForms": {
-              "target": "Package",
-              "version": "[1.7.5, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
