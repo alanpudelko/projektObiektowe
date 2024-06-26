@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # projektObiektowe
    Problem z otwrciem projektu ?
 =======
@@ -8,6 +8,7 @@
 3. [Licencja](#licencja)
 4. [Kontakt](#kontakt)
 5. [Kolaboracja](#kolaboracja)
+6. [Podsumowanie](#podsumowanie)
 
 
 # Nazwa oraz opis projektu
@@ -61,4 +62,24 @@ GitHub: https://github.com/RafalSa
 Alan Pudełko
 
 Igor Radziszewski
->>>>>>> master
+
+## Podsumowanie
+## Koncept
+EuroExplorer to fascynujący projekt mający na celu promowanie podróży po różnych krajach Europy oraz odkrywanie ich kultury, historii i dziedzictwa. Projekt skupia się na zapewnieniu użytkownikom pełnego wglądu w bogactwo różnorodności europejskiej poprzez interaktywne narzędzia, które ułatwiają planowanie podróży i poznawanie nowych miejsc.
+
+Aplikacja miała założenia takie jak:
+1. Interaktywna Mapa Geograficzna: EuroExplorer oferuje interaktywną mapę, która umożliwia użytkownikom eksplorację geografii i atrakcji poszczególnych krajów Unii Europejskiej. Użytkownicy mogą przybliżać i oddalać mapę, klikając na poszczególne kraje, aby uzyskać szczegółowe informacje.
+
+2. Baza Wiedzy o Krajach: Projekt zawiera bogatą bazę wiedzy na temat każdego kraju UE, obejmującą historię, kulturę, tradycje, kuchnię i inne istotne informacje. Użytkownicy mogą zgłębiać szczegóły dotyczące miejsc do odwiedzenia, lokalnych festiwali oraz ważnych wydarzeń historycznych.
+
+3. Edukacja i Świadomość: EuroExplorer dąży do edukowania użytkowników o różnorodności kulturowej Europy poprzez przedstawianie unikalnych cech każdego kraju. Projekt promuje zrozumienie i szacunek dla różnych kultur oraz zachęca do poszerzania horyzontów poprzez podróże i poznawanie nowych miejsc.
+
+4. Integracja Społecznościowa: Platforma umożliwia użytkownikom dzielenie się swoimi doświadczeniami i opiniami na temat podróży po Europie. Możliwość komentowania, oceniania i polecania miejsc pozwala na budowanie społeczności pasjonatów podróży.
+
+Prawdziwa realizacja zamknęła się do:
+1. Interaktywna Mapa Geograficzna
+2. Baza Wiedzy o Krajach
+3. Edukacja i Świadomość
+Pomimo osiągnięcia trzech czwartych założeń projektu EuroExplorer, pozostające 1/4 może zostać zrealizowane w przyszłości, gdy tylko znajdzie się więcej czasu oraz zostaną naprawione błędy. Pracujemy nad tym, aby dostarczyć pełną funkcjonalność platformy, zapewniając interaktywną mapę, szeroką bazę wiedzy o krajach UE, integrację społecznościową oraz praktyczne wsparcie dla podróżników. Naszym celem jest stworzenie inspirującego narzędzia, które nie tylko ułatwia podróżowanie po Europie, ale także promuje zrozumienie i szacunek dla różnorodności kulturowej kontynentu.
+
+Całość projektu była dokładnie planowana podczas pierwszych spotkań oraz ewentualnie korygowana i kwestionowana wraz z rozwojem projektu.
