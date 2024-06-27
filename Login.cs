@@ -34,25 +34,24 @@ namespace EuroExplorer
                 string storedHashedPassword = user.Password;
                 string storedSalt = user.Salt;
 
-                // Verify password with stored hashed password and salt
                 if (UserUtils.VerifyPassword(password, storedHashedPassword, storedSalt))
                 {
-                    // Show successful login message
+                    
                     MessageBox.Show("Zalogowano pomyślnie.", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    // Save logged in user data to file
+                    
                     var loggedInUserPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "loggedInUser.json");
                     var serializedData = JsonConvert.SerializeObject(user);
                     File.WriteAllText(loggedInUserPath, serializedData);
 
-                    // Open main form and hide login form
+                    
                     var mapForm = new Form1(user);
                     mapForm.Show();
                     this.Hide();
                 }
                 else
                 {
-                    // Show unsuccessful login message
+                   
                     MessageBox.Show("Niepoprawne hasło.", "Błąd logowania", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
@@ -71,12 +70,12 @@ namespace EuroExplorer
 
         private void usernameTextBox_TextChanged(object sender, EventArgs e)
         {
-            // Możesz dodać dodatkową logikę, jeśli potrzebujesz
+            
         }
 
         private void passwordTextBox_TextChanged(object sender, EventArgs e)
         {
-            // Możesz dodać dodatkową logikę, jeśli potrzebujesz
+           
         }
     }
 }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EuroExplorer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+29a5fe3bc7b1fd6d16ad368f2b7008a079b750c3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eefa5eaf642cad31b0788d81fc66650c0093e1b1")]
 [assembly: System.Reflection.AssemblyProductAttribute("EuroExplorer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EuroExplorer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

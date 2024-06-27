@@ -2,17 +2,18 @@ using EuroExplorer.Models;
 using GMap.NET.MapProviders;
 using GMap.NET.WindowsForms;
 using GMap.NET;
+using Newtonsoft.Json;
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Newtonsoft.Json;
 
 namespace EuroExplorer
 {
     public partial class Form1 : Form
     {
         private User user;
+        private User loggedInUser;
 
         public Form1(User user)
         {
@@ -57,132 +58,6 @@ namespace EuroExplorer
             return string.Empty;
         }
 
-
-
-        private void Title_Click(object sender, EventArgs e)
-        {
-            // Obs³uga klikniêcia na tytu³, jeœli jest wymagana
-        }
-
-        private void CountryA_Click(object sender, EventArgs e)
-        {
-            FormA newFormA = new FormA(user);
-            newFormA.Show();
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void CountryB_Click(object sender, EventArgs e)
-        {
-            FormB newFormB = new FormB(user);
-            newFormB.Show();
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void CountryC_Click(object sender, EventArgs e)
-        {
-            FormC newFormC = new FormC(user);
-            newFormC.Show();
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void CountryD_Click(object sender, EventArgs e)
-        {
-            FormD newFormD = new FormD(user);
-            newFormD.Show();
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void CountryE_Click(object sender, EventArgs e)
-        {
-            FormE newFormE = new FormE(user);
-            newFormE.Show();
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void CountryF_Click(object sender, EventArgs e)
-        {
-            FormF newFormF = new FormF(user);
-            newFormF.Show();
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void CountryG_Click(object sender, EventArgs e)
-        {
-            FormG newFormG = new FormG(user);
-            newFormG.Show();
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void CountryH_Click(object sender, EventArgs e)
-        {
-            FormH newFormH = new FormH(user);
-            newFormH.Show();
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void CountryI_Click(object sender, EventArgs e)
-        {
-            FormI newFormI = new FormI(user);
-            newFormI.Show();
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void CountryL_Click(object sender, EventArgs e)
-        {
-            FormL newFormL = new FormL(user);
-            newFormL.Show();
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void Country£_Click(object sender, EventArgs e)
-        {
-            Form£ newForm£ = new Form£(user);
-            newForm£.Show();
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void CountryM_Click(object sender, EventArgs e)
-        {
-            FormM newFormM = new FormM(user);
-            newFormM.Show();
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void CountryN_Click(object sender, EventArgs e)
-        {
-            FormN newFormN = new FormN(user);
-            newFormN.Show();
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void CountryP_Click(object sender, EventArgs e)
-        {
-            FormP newFormP = new FormP(user);
-            newFormP.Show();
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void CountryR_Click(object sender, EventArgs e)
-        {
-            FormR newFormR = new FormR(user);
-            newFormR.Show();
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void CountryS_Click(object sender, EventArgs e)
-        {
-            FormS newFormS = new FormS(user);
-            newFormS.Show();
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void CountryW_Click(object sender, EventArgs e)
-        {
-            FormW newFormW = new FormW(user);
-            newFormW.Show();
-            this.WindowState = FormWindowState.Minimized;
-        }
-
         private void gMapControl1_Load(object sender, EventArgs e)
         {
             gMapControl1.MapProvider = GMapProviders.GoogleMap;
@@ -214,94 +89,7 @@ namespace EuroExplorer
                 Console.WriteLine($"Country from API: {country}");
 
                 // Open the appropriate form based on the country
-                switch (country)
-                {
-                        case "Poland":
-                            OpenCountryForm(new Polska(user));
-                            break;
-                        case "Austria":
-                            OpenCountryForm(new Austria(user));
-                            break;
-                        case "Belgium":
-                            OpenCountryForm(new Belgia(user)); // Change to Belgium
-                            break;
-                        case "Bulgaria":
-                            OpenCountryForm(new Bu³garia(user)); // Change to Bulgaria
-                            break;
-                        case "Croatia":
-                            OpenCountryForm(new Chorwacja(user)); // Change to Croatia
-                            break;
-                        case "Cyprus":
-                            OpenCountryForm(new Cypr(user)); // Change to Cyprus
-                            break;
-                        case "Czechia":
-                            OpenCountryForm(new Czechy(user)); // Change to Czechy
-                            break;
-                        case "Denmark":
-                            OpenCountryForm(new Dania(user)); // Change to Dania
-                            break;
-                        case "Estonia":
-                            OpenCountryForm(new Estonia(user));
-                            break;
-                        case "Finland":
-                            OpenCountryForm(new Finlandia(user)); // Change to Finlandia
-                            break;
-                        case "France":
-                            OpenCountryForm(new Francja(user)); // Change to Francja
-                            break;
-                        case "Germany":
-                            OpenCountryForm(new Niemcy(user)); // Change to Niemcy
-                            break;
-                        case "Greece":
-                            OpenCountryForm(new Grecja(user)); // Change to Grecja
-                            break;
-                        case "Spain":
-                            OpenCountryForm(new Hiszpania(user)); // Change to Hiszpania
-                            break;
-                        case "Netherlands":
-                            OpenCountryForm(new Holandia(user)); // Change to Holandia
-                            break;
-                        case "Ireland":
-                            OpenCountryForm(new Irlandia(user)); // Change to Irlandia
-                            break;
-                        case "Lithuania":
-                            OpenCountryForm(new Litwa(user)); // Change to Litwa
-                            break;
-                        case "Luxembourg":
-                            OpenCountryForm(new Luksemburg(user)); // Change to Luksemburg
-                            break;
-                        case "Latvia":
-                            OpenCountryForm(new £otwa(user)); // Change to £otwa
-                            break;
-                        case "Malta":
-                            OpenCountryForm(new Malta(user));
-                            break;
-                        case "Portugal":
-                            OpenCountryForm(new Portugalia(user)); // Change to Portugalia
-                            break;
-                        case "Romania":
-                            OpenCountryForm(new Rumunia(user)); // Change to Rumunia
-                            break;
-                        case "Slovakia":
-                            OpenCountryForm(new S³owacja(user)); // Change to S³owacja
-                            break;
-                        case "Slovenia":
-                            OpenCountryForm(new S³owenia(user)); // Change to S³owenia
-                            break;
-                        case "Sweden":
-                            OpenCountryForm(new Szwecja(user)); // Change to Szwecja
-                            break;
-                        case "Hungary":
-                            OpenCountryForm(new Wêgry(user));
-                            break;
-                        case "Italy":
-                        OpenCountryForm(new W³ochy(user));// Change to Wêgry
-                            break;
-
-                    default:
-                        MessageBox.Show("Country not recognized or not implemented.");
-                        break;
-                }
+                OpenCountryForm(GetCountryForm(country));
             }
             else
             {
@@ -309,12 +97,197 @@ namespace EuroExplorer
             }
         }
 
+        private Form GetCountryForm(string country)
+        {
+            // Return the appropriate form based on the country
+            switch (country)
+            {
+                case "Poland":
+                    return new Polska(user);
+                case "Austria":
+                    return new Austria(user);
+                case "Belgium":
+                    return new Belgia(user);
+                case "Bulgaria":
+                    return new Bu³garia(user);
+                case "Croatia":
+                    return new Chorwacja(user);
+                case "Cyprus":
+                    return new Cypr(user);
+                case "Czechia":
+                    return new Czechy(user);
+                case "Denmark":
+                    return new Dania(user);
+                case "Estonia":
+                    return new Estonia(user);
+                case "Finland":
+                    return new Finlandia(user);
+                case "France":
+                    return new Francja(user);
+                case "Germany":
+                    return new Niemcy(user);
+                case "Greece":
+                    return new Grecja(user);
+                case "Spain":
+                    return new Hiszpania(user);
+                case "Netherlands":
+                    return new Holandia(user);
+                case "Ireland":
+                    return new Irlandia(user);
+                case "Lithuania":
+                    return new Litwa(user);
+                case "Luxembourg":
+                    return new Luksemburg(user);
+                case "Latvia":
+                    return new £otwa(user);
+                case "Malta":
+                    return new Malta(user);
+                case "Portugal":
+                    return new Portugalia(user);
+                case "Romania":
+                    return new Rumunia(user);
+                case "Slovakia":
+                    return new S³owacja(user);
+                case "Slovenia":
+                    return new S³owenia(user);
+                case "Sweden":
+                    return new Szwecja(user);
+                case "Hungary":
+                    return new Wêgry(user);
+                case "Italy":
+                    return new W³ochy(user);
+                default:
+                    MessageBox.Show("Country not recognized or not implemented.");
+                    return null;
+            }
+        }
+
         private void OpenCountryForm(Form countryForm)
         {
-            countryForm.Show();
+            if (countryForm != null)
+            {
+                countryForm.Show();
+                this.WindowState = FormWindowState.Minimized;
+            }
+        }
+
+        private void CountryA_Click(object sender, EventArgs e)
+        {
+            FormA f30 = new FormA(loggedInUser);
+            f30.Show();
             this.WindowState = FormWindowState.Minimized;
         }
 
+        private void CountryB_Click(object sender, EventArgs e)
+        {
+            FormB f31 = new FormB(loggedInUser);
+            f31.Show();
+            this.WindowState = FormWindowState.Minimized;
+        }
 
+        private void CountryC_Click(object sender, EventArgs e)
+        {
+            FormC f32 = new FormC(loggedInUser);
+            f32.Show();
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void CountryD_Click(object sender, EventArgs e)
+        {
+            FormD f33 = new FormD(loggedInUser);
+            f33.Show();
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void CountryE_Click(object sender, EventArgs e)
+        {
+            FormE f34 = new FormE(loggedInUser);
+            f34.Show();
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void CountryF_Click(object sender, EventArgs e)
+        {
+            FormF f35 = new FormF(loggedInUser);
+            f35.Show();
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void CountryG_Click(object sender, EventArgs e)
+        {
+            FormG f36 = new FormG(loggedInUser);
+            f36.Show();
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void CountryH_Click(object sender, EventArgs e)
+        {
+            FormH f37 = new FormH(loggedInUser);
+            f37.Show();
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void CountryI_Click(object sender, EventArgs e)
+        {
+            FormI f38 = new FormI(loggedInUser);
+            f38.Show();
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void CountryL_Click(object sender, EventArgs e)
+        {
+            FormL f39 = new FormL(loggedInUser);
+            f39.Show();
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void Country£_Click(object sender, EventArgs e)
+        {
+            Form£ f40 = new Form£(loggedInUser);
+            f40.Show();
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void CountryM_Click(object sender, EventArgs e)
+        {
+            FormM f41 = new FormM(loggedInUser);
+            f41.Show();
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void CountryN_Click(object sender, EventArgs e)
+        {
+            FormW f42 = new FormW(loggedInUser);
+            f42.Show();
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void CountryP_Click(object sender, EventArgs e)
+        {
+            FormP f43 = new FormP(loggedInUser);
+            f43.Show();
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void CountryR_Click(object sender, EventArgs e)
+        {
+            FormR f44 = new FormR(loggedInUser);
+            f44.Show();
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void CountryS_Click(object sender, EventArgs e)
+        {
+            FormS f45 = new FormS(loggedInUser);
+            f45.Show();
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void CountryW_Click(object sender, EventArgs e)
+        {
+            FormW f46 = new FormW(loggedInUser);
+            f46.Show();
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }
