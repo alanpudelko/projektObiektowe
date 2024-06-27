@@ -1,7 +1,3 @@
-
-# projektObiektowe
-   Problem z otwrciem projektu ?
-=======
 # Spis treści
 1. [Nazwa oraz opis projektu](#nazwa-oraz-opis-projektu)
 2. [Instalacja](#instalacja)
@@ -30,7 +26,7 @@ Dzięki EuroExplorer użytkownicy mogą poznać bogactwo różnorodności kultur
   
   # Instalacja
     Problem z otwrciem projektu ?
->>>>>>> master
+    
 1. Stwórz nowy projekt "Aplikacja Windows Forms", nazwa oraz reszta nie jest istotna.
 2. Platforma jest napisana w ".NET 8.0".
 3. Kliknij utwórz.
@@ -43,8 +39,6 @@ Dzięki EuroExplorer użytkownicy mogą poznać bogactwo różnorodności kultur
 
 9. W otwartym folderze szukamy "EuroExplorer.csproj" klikamy 2x Lewym otworzy nam się na nowo projekt.
 10. Ciesz się funkcjonalnością programu po kompilacji.
-<<<<<<< HEAD
-=======
 
 # Licencja
 [AGPL-3.0 license](https://github.com/alanpudelko/projektObiektowe/tree/master?tab=AGPL-3.0-1-ov-file)
@@ -83,3 +77,35 @@ Prawdziwa realizacja zamknęła się do:
 Pomimo osiągnięcia trzech czwartych założeń projektu EuroExplorer, pozostające 1/4 może zostać zrealizowane w przyszłości, gdy tylko znajdzie się więcej czasu oraz zostaną naprawione błędy. Pracujemy nad tym, aby dostarczyć pełną funkcjonalność platformy, zapewniając interaktywną mapę, szeroką bazę wiedzy o krajach UE, integrację społecznościową oraz praktyczne wsparcie dla podróżników. Naszym celem jest stworzenie inspirującego narzędzia, które nie tylko ułatwia podróżowanie po Europie, ale także promuje zrozumienie i szacunek dla różnorodności kulturowej kontynentu.
 
 Całość projektu była dokładnie planowana podczas pierwszych spotkań oraz ewentualnie korygowana i kwestionowana wraz z rozwojem projektu.
+
+Projekt był stworzony na potrzebę przedmiotu "Programowanie obiektowe". Podstawowe wymagania zawierały, aby były zastosowane następujące pojęcia: interfejsy, dziedziczenie, polimorfizm oraz hermetyzacja przy użyciu paradygmatu programowania obiektowego. Poniżej przedstawię gdzie i jak zostały użyte w naszym projekcie:
+
+Klasa Country jest dobrym przykładem hermetyzacji. Wszystkie pola są prywatne (domyślnie) i dostęp do nich jest zapewniony za pomocą publicznych właściwości (get i set), co jest kluczowym aspektem hermetyzacji.
+Hermetyzacja jest widoczna w klasie CountryInfo. Wszystkie pola są prywatne (private) i dostęp do nich jest ograniczony. Na przykład, _continentTextBox jest prywatnym polem, które jest dostępne tylko wewnątrz klasy CountryInfo.  
+
+Dziedziczenie teoretycznie znajduje się prawie wszedzie ponieważ dziedziczenie wygląda następująco Belgia : Form jest to przykład z projektu jestli jest pomiędzy nimi ":" to oznacza ze dochodzi do dziedziczenia Belgia dziedziczy po Form.
+
+W przedstawionym kodzie polimorfizm występuje głównie w kontekście metod wirtualnych i przesłanianych (override). Oto, gdzie możemy go znaleźć i jak działa:
+Polimorfizm w kodzie
+protected override async void OnLoad(EventArgs e)
+{
+    base.OnLoad(e);
+    await GetCurrentTimeInViennaAsync();
+}
+Opis polimorfizmu
+Metoda OnLoad:
+Ta metoda jest przesłanianiem (override) metody OnLoad z klasy bazowej Form. Kiedy aplikacja Windows Forms ładuje formularz Austria, wywoływana jest metoda OnLoad. Dzięki polimorfizmowi metoda OnLoad z klasy Austria jest wywoływana zamiast metody OnLoad z klasy bazowej Form. To umożliwia wykonanie dodatkowych operacji specyficznych dla formularza Austria, takich jak pobranie aktualnego czasu w Wiedniu.
+Wywołanie base.OnLoad(e) zapewnia, że wykonana zostanie również standardowa logika ładowania formularza zdefiniowana w klasie bazowej.
+
+Interfejs IUserSearchHistory definiuje operacje związane z historią wyszukiwań użytkownika. Zawiera następujące elementy:
+
+SearchHistory: Lista ciągów znaków przechowująca historię wyszukiwań użytkownika.
+AddToSearchHistory(string searchTerm): Metoda dodająca nowy element do historii wyszukiwań.
+ClearSearchHistory(): Metoda czyszcząca historię wyszukiwań.
+kod
+public interface IUserSearchHistory
+{
+    List<string> SearchHistory { get; set; }
+    void AddToSearchHistory(string searchTerm);
+    void ClearSearchHistory();
+}
