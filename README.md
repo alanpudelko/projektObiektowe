@@ -78,6 +78,7 @@ Pomimo osiągnięcia trzech czwartych założeń projektu EuroExplorer, pozostaj
 
 Całość projektu była dokładnie planowana podczas pierwszych spotkań oraz ewentualnie korygowana i kwestionowana wraz z rozwojem projektu.
 
+# Założenia przedmiotu
 Projekt był stworzony na potrzebę przedmiotu "Programowanie obiektowe". Podstawowe wymagania zawierały, aby były zastosowane następujące pojęcia: interfejsy, dziedziczenie, polimorfizm oraz hermetyzacja przy użyciu paradygmatu programowania obiektowego. Poniżej przedstawię gdzie i jak zostały użyte w naszym projekcie:
 
 Klasa Country jest dobrym przykładem hermetyzacji. Wszystkie pola są prywatne (domyślnie) i dostęp do nich jest zapewniony za pomocą publicznych właściwości (get i set), co jest kluczowym aspektem hermetyzacji.
