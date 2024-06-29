@@ -40,6 +40,49 @@ Dzięki EuroExplorer użytkownicy mogą poznać bogactwo różnorodności kultur
 9. W otwartym folderze szukamy "EuroExplorer.csproj" klikamy 2x Lewym otworzy nam się na nowo projekt.
 10. Ciesz się funkcjonalnością programu po kompilacji.
 
+# Diagram UML
+```mermaid
+classDiagram    
+    class Country {
+        +string Code
+        +string CommonName
+        +string OfficialName
+        +string Flag
+        +string Capital
+        +int Population
+        +string Area
+        +Continent Continent
+        +string Subregion
+        +string[] Languages
+        +string[] Currencies
+        +string[] Timezones
+        +double Lat
+        +double Lng
+        +string TemperatureUnit
+        +string SpeedUnit
+        +double CurrentTemperature
+        +double CurrentWindSpeed
+    }
+    
+    class Continent {
+        +string Name
+        +List<Country> Countries
+    }
+
+    class User {
+        +int Id
+        +string Username
+        +string Password
+        +string Salt
+        +List<string> SearchHistory
+        +List<string> HomeLocation
+        +string Country
+    }
+
+    Country --> Continent
+```
+
+
 # Licencja
 [AGPL-3.0 license](https://github.com/alanpudelko/projektObiektowe/tree/master?tab=AGPL-3.0-1-ov-file)
 
